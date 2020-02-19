@@ -1,5 +1,4 @@
 import React from 'react';
-import Component from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,50 +12,33 @@ import Modal from 'react-bootstrap/Modal';
 import {List, XSquare, ChevronLeft, InfoSquare} from 'react-bootstrap-icons'
 import data from './data';
 
+
 class Header extends React.Component {
   render() {
     return(
         <Navbar bg="dark">
-          <Navbar.Text><Button variant="secondary" href="#"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
+          <Navbar.Text><Button variant="secondary"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
-              <Button variant="secondary" href="#"><InfoSquare color="ghostwhite" size={25} /></Button>
+              <Button variant="secondary"><InfoSquare color="ghostwhite" size={25} /></Button>
             </Navbar.Collapse>
         </Navbar>
       )
   }
 }
 
-class Footer extends React.Component {
-  render() {
-    return(
+function Footer(props) {
+  return(
       <div className="fixed-bottom">
         <Navbar bg="dark">
           <div className="ml-3">
-          <Button className="mr-5" variant="secondary" href="#"><ChevronLeft color="ghostwhite" size={25} /></Button>
-          <Button className="ml-5 mr-5" variant="secondary" href="#">Next</Button>
+          <Button className="mr-5" variant="secondary" onClick={() => props.onBackClick()}><ChevronLeft color="ghostwhite" size={25} /></Button>
+          <Button className="ml-5 mr-5" variant="secondary" onClick={() => props.onNextClick()}>Next</Button>
           <Button className="ml-5" variant="secondary"><XSquare color="ghostwhite" size={25}/></Button>
           </div>
         </Navbar>
       </div>
     );
-  }
 }
-
-// class Question extends React.Component {
-//   render() {
-//     return(
-//       <Card className="mt-5 ml-5 mr-5">
-//         <Card.Header>Name</Card.Header>
-//         <Card.Body>
-//           <Card.Title>Enter your name below.</Card.Title>
-//           <Card.Text>
-            
-//           </Card.Text>
-//         </Card.Body>
-//       </Card>
-//     );
-//   }
-// }
 
 function Question(props) {
   return(
@@ -87,38 +69,35 @@ class SideBar extends React.Component {
     }
 }
 
-class SingleTextInput extends React.Component {
-  render() {
-    return(
+function SingleTextInput(props) {
+  return(
         <Form className="mt-5 ml-5 mr-5">
-          <Form.Group controlId="formBasicName">
-            <Form.Control type="name" placeholder="Jane Doe" />
+          <Form.Group controlId={props.controlId}>
+            <Form.Control type={props.controlId} placeholder={props.placeHolder} />
           </Form.Group>
         </Form>
     );
-  }
 }
-
-// function SingleTextInput(props) {
-//   return(
-//         <Form className="mt-5 ml-5 mr-5">
-//           <Form.Group controlId={props.message}>
-//             <Form.Control type={props.message} placeholder={props.placeholder} />
-//           </Form.Group>
-//         </Form>
-//     );
-// }
 
 function ButtonInput(props) {
   return(
-    <Button>{props.message}</Button>
+    <Button className="mt-5 ml-5 mr-5">{props.children}</Button>
   );
 }
 
-class Input extends React.Component {
-  render() {
-    return (<SingleTextInput />);
-  }
+const inputMap = {
+  "SingleTextInput": SingleTextInput,
+  "ButtonInput": ButtonInput
+};
+
+function Input(props) {
+  const compName = props.compName;
+  const compProps = props.compProps;
+  const compChildren = props.compChildren;
+  var inputElement = React.createElement(inputMap[compName], compProps, compChildren);
+  return(
+    <div>{inputElement}</div>
+  );
 }
 
 class Template extends React.Component {
@@ -134,47 +113,71 @@ class Template extends React.Component {
   }
 
   getQuestion() {
-    return this.state.questions[this.state.currQuestion];
+    return data.data[this.state.currQuestion].question.question;
   }
 
   getLabel() {
-    return this.state.questionLabels[this.state.currQuestion];
+    return data.data[this.state.currQuestion].question.label;
   }
 
   getInfo () {
-    return this.state.questionInfo[this.state.currQuestion];
+    return data.data[this.state.currQuestion].question.info;
+  }
+
+  getInput() {
+    return data.data[this.state.currQuestion].input.component.compName;
+  }
+
+  getInputProps() {
+    return data.data[this.state.currQuestion].input.component.compProps;
+  }
+
+  getInputChildren() {
+    return data.data[this.state.currQuestion].input.component.compChildren;
+  }
+
+  handleNextClick() {
+    if (this.state.currQuestion < data.data.length - 1) {
+      this.setState({
+        currQuestion: this.state.currQuestion + 1
+      });
+    }
+  }
+
+  handleBackClick() {
+    if (this.state.currQuestion > 0) {
+      this.setState({
+        currQuestion: this.state.currQuestion - 1
+      })
+    }
   }
 
   render() {
     const question = this.getQuestion();
     const label = this.getLabel();
     const info = this.getInfo();
+    const input = this.getInput();
+    const inputProps = this.getInputProps();
+    const inputChildren = this.getInputChildren();
 
     return(
       <div>
         <Header />
         <ProgressBar now={this.state.progress} />
         <Question question={question} label={label} info={info}/>
-        <Input />
-        <Footer />
+        <Input compName={input} compProps={inputProps} compChildren={inputChildren}/>
+        <Footer onNextClick={() => this.handleNextClick()} onBackClick={() => this.handleBackClick()}/>
       </div>
     );
   }
 }
 
 function App() {
-  // return (
-  //   <div>
-  //     <Header />
-  //     <ProgressBar now={60} />
-  //     <Question />
-  //     <SingleTextInput />
-  //     <Footer />
-  //   </div>
-  // );
+
   return(
     <Template />
   );
 }
 
 export default App;
+
