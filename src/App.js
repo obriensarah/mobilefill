@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import {List, XSquare, ChevronLeft, InfoSquare} from 'react-bootstrap-icons'
 import data from './data';
 
@@ -42,7 +44,7 @@ function Footer(props) {
 
 function Question(props) {
   return(
-    <Card className="mt-5 ml-5 mr-5">
+    <Card className="mt-5 ml-5 mr-5 mb-5">
       <Card.Header>{props.label}</Card.Header>
       <Card.Body>
         <Card.Title>{props.question}</Card.Title>
@@ -71,7 +73,7 @@ class SideBar extends React.Component {
 
 function SingleTextInput(props) {
   return(
-        <Form className="mt-5 ml-5 mr-5">
+        <Form className="mt-3 ml-5 mr-5">
           <Form.Group controlId={props.controlId}>
             <Form.Control type={props.controlId} placeholder={props.placeHolder} />
           </Form.Group>
@@ -81,22 +83,31 @@ function SingleTextInput(props) {
 
 function ButtonInput(props) {
   return(
-    <Button className="mt-5 ml-5 mr-5">{props.children}</Button>
+    <Button className="mt-3 ml-5 mr-5">{props.children}</Button>
+  );
+}
+
+function DropdownInput(props) {
+  return(
+    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3 ml-5 mr-5">
+      <Dropdown.Item onClick={() => console.log("you clicked Action!")}>Action</Dropdown.Item>
+    </DropdownButton>
   );
 }
 
 const inputMap = {
   "SingleTextInput": SingleTextInput,
-  "ButtonInput": ButtonInput
+  "ButtonInput": ButtonInput,
+  "DropdownInput": DropdownInput,
 };
 
 function Input(props) {
-  const compName = props.compName;
-  const compProps = props.compProps;
-  const compChildren = props.compChildren;
-  var inputElement = React.createElement(inputMap[compName], compProps, compChildren);
-  return(
-    <div>{inputElement}</div>
+  const inputs = props.inputs;
+
+  return (
+    inputs.map((input, index) => (<div key={index}>
+      {React.createElement(inputMap[input.component.compName], input.component.compProps, input.component.compChildren)}
+      </div>))
   );
 }
 
@@ -104,36 +115,13 @@ class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: ["Enter your name below.", "Sample Question"],
-      questionLabels: ["Name", "Sample"],
-      questionInfo: [null, "This is extra information about the question"],
       currQuestion: 0, //index of current question
       progress: 50
     }
   }
 
-  getQuestion() {
-    return data.data[this.state.currQuestion].question.question;
-  }
-
-  getLabel() {
-    return data.data[this.state.currQuestion].question.label;
-  }
-
-  getInfo () {
-    return data.data[this.state.currQuestion].question.info;
-  }
-
-  getInput() {
-    return data.data[this.state.currQuestion].input.component.compName;
-  }
-
-  getInputProps() {
-    return data.data[this.state.currQuestion].input.component.compProps;
-  }
-
-  getInputChildren() {
-    return data.data[this.state.currQuestion].input.component.compChildren;
+  getQuestionMetadata() {
+    return data.data[this.state.currQuestion];
   }
 
   handleNextClick() {
@@ -153,19 +141,21 @@ class Template extends React.Component {
   }
 
   render() {
-    const question = this.getQuestion();
-    const label = this.getLabel();
-    const info = this.getInfo();
-    const input = this.getInput();
-    const inputProps = this.getInputProps();
-    const inputChildren = this.getInputChildren();
+
+    const metadata = this.getQuestionMetadata();
+
+    const question = metadata.question.question;
+    const label = metadata.question.label;
+    const info = metadata.question.info;
+    const inputs = metadata.inputs;
+    
 
     return(
       <div>
         <Header />
         <ProgressBar now={this.state.progress} />
         <Question question={question} label={label} info={info}/>
-        <Input compName={input} compProps={inputProps} compChildren={inputChildren}/>
+        <Input inputs={inputs} />
         <Footer onNextClick={() => this.handleNextClick()} onBackClick={() => this.handleBackClick()}/>
       </div>
     );
