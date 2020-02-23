@@ -69,3 +69,8 @@
 .menu-sidebar .nav {
   width: 320px;
 }
+
+.scroll {
+	max-height:330px;
+	overflow:auto;
+}

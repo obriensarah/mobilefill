@@ -30,7 +30,7 @@ class Header extends React.Component {
 
 function Footer(props) {
   return(
-      <div className="fixed-bottom">
+      <div className="mt-5 fixed-bottom">
         <Navbar bg="dark">
           <div className="ml-3">
           <Button className="mr-5" variant="secondary" onClick={() => props.onBackClick()}><ChevronLeft color="ghostwhite" size={25} /></Button>
@@ -73,7 +73,7 @@ class SideBar extends React.Component {
 
 function SingleTextInput(props) {
   return(
-        <Form className="mt-3 ml-5 mr-5">
+        <Form className="mt-3">
           <Form.Group controlId={props.controlId}>
             <Form.Control type={props.controlId} placeholder={props.placeHolder} />
           </Form.Group>
@@ -83,15 +83,46 @@ function SingleTextInput(props) {
 
 function ButtonInput(props) {
   return(
-    <Button className="mt-3 ml-5 mr-5">{props.children}</Button>
+    <Button className="mt-3">{props.children}</Button>
   );
 }
 
 function DropdownInput(props) {
+  const options = props.options;
   return(
-    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3 ml-5 mr-5">
-      <Dropdown.Item onClick={() => console.log("you clicked Action!")}>Action</Dropdown.Item>
+    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3">
+      {
+        options.map((option, index) =>
+          <Dropdown.Item key={index} onClick={() => console.log("you clicked Action!")}>{option}</Dropdown.Item>
+        )
+      }
     </DropdownButton>
+  );
+}
+
+function CheckboxInput(props) {
+  const options = props.options;
+  return(
+    <Form className="mt-3">
+      {
+        options.map((option, index) =>
+          <Form.Check key={index} type='checkbox' id={index} label={option}/>
+        )
+      }
+    </Form>
+  );
+}
+
+function MultipleChoiceInput(props) {
+  const options = props.options;
+  return(
+    <Form.Group className="mt-3">
+      {
+        options.map((option, index) =>
+          <Form.Check key={index} type='radio' id={index} label={option} name="multiplechoices"/>
+        )
+      }
+    </Form.Group>
   );
 }
 
@@ -99,15 +130,21 @@ const inputMap = {
   "SingleTextInput": SingleTextInput,
   "ButtonInput": ButtonInput,
   "DropdownInput": DropdownInput,
+  "CheckboxInput": CheckboxInput,
+  "MultipleChoiceInput": MultipleChoiceInput,
 };
 
 function Input(props) {
+
   const inputs = props.inputs;
 
   return (
-    inputs.map((input, index) => (<div key={index}>
+    <Card className="border-0 scroll mt-3 ml-5 mr-5 mb-5">
+    {inputs.map((input, index) => (
+      <div key={index}>
       {React.createElement(inputMap[input.component.compName], input.component.compProps, input.component.compChildren)}
-      </div>))
+      </div>))}
+    </Card>
   );
 }
 
@@ -116,7 +153,6 @@ class Template extends React.Component {
     super(props);
     this.state = {
       currQuestion: 0, //index of current question
-      progress: 50
     }
   }
 
@@ -140,6 +176,10 @@ class Template extends React.Component {
     }
   }
 
+  updateProgress() {
+    this.setState({progress: this.currQuestion/data.data.length})
+  }
+
   render() {
 
     const metadata = this.getQuestionMetadata();
@@ -149,11 +189,10 @@ class Template extends React.Component {
     const info = metadata.question.info;
     const inputs = metadata.inputs;
     
-
     return(
       <div>
         <Header />
-        <ProgressBar now={this.state.progress} />
+        <ProgressBar now={(this.state.currQuestion+1)/data.data.length * 100} />
         <Question question={question} label={label} info={info}/>
         <Input inputs={inputs} />
         <Footer onNextClick={() => this.handleNextClick()} onBackClick={() => this.handleBackClick()}/>

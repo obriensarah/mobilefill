@@ -41,7 +41,11 @@ const data = {
 				component: {
 					compName: "DropdownInput",
 					compProps: {
-						buttonText:"i'm a dropdown!"
+						buttonText:"i'm a dropdown!",
+						options: [
+							"action1",
+							"action2"
+						]
 					},
 					compChildren: {}
 				}
@@ -57,7 +61,10 @@ const data = {
 				{component: {
 					compName: "DropdownInput",
 					compProps: {
-						buttonText:"i'm a dropdown!"
+						buttonText:"i'm a dropdown!",
+						options: [
+							"action1"
+						]
 					},
 					compChildren: {}
 				}},
@@ -66,6 +73,58 @@ const data = {
 					compProps: {
 					},
 					compChildren: "I'm a button!"
+				}},
+			]
+		},
+		{
+			question:{
+				label: "Abuser Relationship",
+				question: "How is the abuser related to you or the person you want protected?",
+				info: "Check all that apply."
+			},
+			inputs:[
+				{component: {
+					compName: "CheckboxInput",
+					compProps: {
+						options: [
+							"Spouse",
+							"Ex or former spouse",
+							"Current or former partner",
+							"Child",
+							"Parent",
+							"Sibling",
+							"Stepchild",
+							"Stepsibling",
+							"Stepparent",
+							"Grandchild",
+							"Grandparent",
+							"In-law",
+							"Other family member",
+							"We have a child in common (never married)",
+							"We share a living space",
+							"This is another option"
+						]
+					},
+					compChildren: {}
+				}},
+			]
+		},
+		{
+			question:{
+				label: "Order Type",
+				question: "What kind of Order of Protection are you requesting?",
+				info: null
+			},
+			inputs:[
+				{component: {
+					compName: "MultipleChoiceInput",
+					compProps: {
+						options: [
+							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse.",
+							"A Plenary Order of Protection that requires the abuser to get notice and a copy of your Petition before the court hearing."
+						]
+					},
+					compChildren: {}
 				}},
 			]
 		},
