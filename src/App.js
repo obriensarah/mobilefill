@@ -17,16 +17,6 @@ import ReactDOM from "react-dom";
 import SideBar from "./sidebar";
 
 
-function Menu() {
-  return (
-    <div>
-      <SideBar variant="secondary">
-          <List color="ghostwhite" size={25}/>
-      </SideBar>
-    </div>
-  );
-}
-
 class Popup extends React.Component {
   render() {
     return (
@@ -73,7 +63,7 @@ class Header extends React.Component {
     return(
         <Navbar bg="dark">
           <Navbar.Text>
-            <Menu />
+            <SideBar />
           </Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
               <Info />
