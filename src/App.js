@@ -35,11 +35,15 @@ function Footer(props) {
           <div className="ml-3">
           <Button className="mr-5" variant="secondary" onClick={() => props.onBackClick()}><ChevronLeft color="ghostwhite" size={25} /></Button>
           <Button className="ml-5 mr-5" variant="secondary" onClick={() => props.onNextClick()}>Next</Button>
-          <Button className="ml-5" variant="secondary"><XSquare color="ghostwhite" size={25}/></Button>
+          <Button onClick={OpenNewWindow} className="ml-5" variant="secondary"><XSquare color="ghostwhite" size={25}/></Button>
           </div>
         </Navbar>
       </div>
     );
+}
+
+function OpenNewWindow() {
+    window.location.replace('https://www.reddit.com/r/PetTheDamnDog/');
 }
 
 function Question(props) {
