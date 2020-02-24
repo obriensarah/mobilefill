@@ -126,12 +126,19 @@ function MultipleChoiceInput(props) {
   );
 }
 
+function LongTextInput(props) {
+  return(
+    <Form.Control as="textarea" rows="13" placeholder="hello"/>
+  );
+}
+
 const inputMap = {
   "SingleTextInput": SingleTextInput,
   "ButtonInput": ButtonInput,
   "DropdownInput": DropdownInput,
   "CheckboxInput": CheckboxInput,
   "MultipleChoiceInput": MultipleChoiceInput,
+  "LongTextInput": LongTextInput,
 };
 
 function Input(props) {

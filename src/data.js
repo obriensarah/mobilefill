@@ -128,6 +128,25 @@ const data = {
 				}},
 			]
 		},
+		{
+			question:{
+				label: "Order Type",
+				question: "What kind of Order of Protection are you requesting?",
+				info: null
+			},
+			inputs:[
+				{component: {
+					compName: "LongTextInput",
+					compProps: {
+						options: [
+							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse.",
+							"A Plenary Order of Protection that requires the abuser to get notice and a copy of your Petition before the court hearing."
+						]
+					},
+					compChildren: {}
+				}},
+			]
+		},
 	]
 }
 
