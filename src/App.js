@@ -13,20 +13,76 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {List, XSquare, ChevronLeft, InfoSquare} from 'react-bootstrap-icons'
 import data from './data';
+import ReactDOM from "react-dom";
+import SideBar from "./sidebar";
 
+
+function Menu() {
+  return (
+    <div>
+      <SideBar variant="secondary">
+          <List color="ghostwhite" size={25}/>
+      </SideBar>
+    </div>
+  );
+}
+
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className='popup'>
+        <div className='popup_inner'>
+          <h1>Text</h1>
+          <p>Some explaination</p>
+        <Button onClick={this.props.closePopup}>close</Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Info extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPopup: false,
+    }
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Button  id='info' onClick={this.togglePopup.bind(this)} variant="secondary">
+          <InfoSquare color="ghostwhite" size={25} />
+        </Button>
+        {this.state.showPopup ? 
+          <Popup closePopup={this.togglePopup.bind(this)}/>
+          : null
+        }
+      </div>
+    )
+  }
+}
 
 class Header extends React.Component {
   render() {
     return(
         <Navbar bg="dark">
-          <Navbar.Text><Button variant="secondary"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
+          <Navbar.Text>
+            <Menu />
+          </Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
-              <Button variant="secondary"><InfoSquare color="ghostwhite" size={25} /></Button>
+              <Info />
             </Navbar.Collapse>
         </Navbar>
       )
   }
 }
+
 
 function Footer(props) {
   return(
@@ -35,12 +91,18 @@ function Footer(props) {
           <div className="ml-3">
           <Button className="mr-5" variant="secondary" onClick={() => props.onBackClick()}><ChevronLeft color="ghostwhite" size={25} /></Button>
           <Button className="ml-5 mr-5" variant="secondary" onClick={() => props.onNextClick()}>Next</Button>
-          <Button className="ml-5" variant="secondary"><XSquare color="ghostwhite" size={25}/></Button>
+          <Button onClick={OpenNewWindow} className="ml-5" variant="secondary"><XSquare color="ghostwhite" size={25}/></Button>
           </div>
         </Navbar>
       </div>
     );
 }
+
+
+function OpenNewWindow() {
+    window.location.replace('https://www.reddit.com/r/PetTheDamnDog/');
+}
+
 
 function Question(props) {
   return(
@@ -56,20 +118,6 @@ function Question(props) {
   );
 }
 
-class SideBar extends React.Component {
-  render() {
-        return (
-            <Modal className='menu-sidebar left' show={this.props.isVisible} onHide={this.props.onHide} autoFocus keyboard>
-                <Modal.Header closeButton>
-                    <Modal.Title>Menu</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div>hello</div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-}
 
 function SingleTextInput(props) {
   return(
@@ -111,13 +159,33 @@ function Input(props) {
   );
 }
 
+
 class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currQuestion: 0, //index of current question
-      progress: 50
+      progress: 50,
+      showPopup: false,
     }
+  }
+
+  handleClick() {
+    switch(this.state.menuStatus)
+    {
+      case "open":
+        this.setState({
+          menuStatus:"close",
+          style:"menu active"
+        });
+        break;
+      case "close":
+        this.setState({
+          menuStatus:"open",
+          style:"menu"
+        });
+        break;
+    }        
   }
 
   getQuestionMetadata() {
@@ -132,6 +200,7 @@ class Template extends React.Component {
     }
   }
 
+
   handleBackClick() {
     if (this.state.currQuestion > 0) {
       this.setState({
@@ -139,6 +208,7 @@ class Template extends React.Component {
       })
     }
   }
+
 
   render() {
 
@@ -148,7 +218,8 @@ class Template extends React.Component {
     const label = metadata.question.label;
     const info = metadata.question.info;
     const inputs = metadata.inputs;
-    
+    const popup= metadata.popup;
+
 
     return(
       <div>
