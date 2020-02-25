@@ -14,7 +14,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import {List, XSquare, ChevronLeft, InfoSquare} from 'react-bootstrap-icons'
 import data from './data';
 import ReactDOM from "react-dom";
-import SideBar from "./sidebar";
+import SideBarMenu from "./sidebar";
 
 
 class Popup extends React.Component {
@@ -63,7 +63,7 @@ class Header extends React.Component {
     return(
         <Navbar bg="dark">
           <Navbar.Text>
-            <SideBar />
+            <SideBarMenu />
           </Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
               <Info />
@@ -76,7 +76,7 @@ class Header extends React.Component {
 
 function Footer(props) {
   return(
-      <div className="fixed-bottom">
+      <div className="mt-5 fixed-bottom">
         <Navbar bg="dark">
           <div className="ml-3">
           <Button className="mr-5" variant="secondary" onClick={() => props.onBackClick()}><ChevronLeft color="ghostwhite" size={25} /></Button>
@@ -88,11 +88,9 @@ function Footer(props) {
     );
 }
 
-
 function OpenNewWindow() {
     window.location.replace('https://www.reddit.com/r/PetTheDamnDog/');
 }
-
 
 function Question(props) {
   return(
@@ -108,10 +106,24 @@ function Question(props) {
   );
 }
 
+class SideBar extends React.Component {
+  render() {
+        return (
+            <Modal className='menu-sidebar left' show={this.props.isVisible} onHide={this.props.onHide} autoFocus keyboard>
+                <Modal.Header closeButton>
+                    <Modal.Title>Menu</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div>hello</div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+}
 
 function SingleTextInput(props) {
   return(
-        <Form className="mt-3 ml-5 mr-5">
+        <Form className="mt-3">
           <Form.Group controlId={props.controlId}>
             <Form.Control type={props.controlId} placeholder={props.placeHolder} />
           </Form.Group>
@@ -121,15 +133,52 @@ function SingleTextInput(props) {
 
 function ButtonInput(props) {
   return(
-    <Button className="mt-3 ml-5 mr-5">{props.children}</Button>
+    <Button className="mt-3">{props.children}</Button>
   );
 }
 
 function DropdownInput(props) {
+  const options = props.options;
   return(
-    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3 ml-5 mr-5">
-      <Dropdown.Item onClick={() => console.log("you clicked Action!")}>Action</Dropdown.Item>
+    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3">
+      {
+        options.map((option, index) =>
+          <Dropdown.Item key={index} onClick={() => console.log("you clicked Action!")}>{option}</Dropdown.Item>
+        )
+      }
     </DropdownButton>
+  );
+}
+
+function CheckboxInput(props) {
+  const options = props.options;
+  return(
+    <Form className="mt-3">
+      {
+        options.map((option, index) =>
+          <Form.Check key={index} type='checkbox' id={index} label={option}/>
+        )
+      }
+    </Form>
+  );
+}
+
+function MultipleChoiceInput(props) {
+  const options = props.options;
+  return(
+    <Form.Group className="mt-3">
+      {
+        options.map((option, index) =>
+          <Form.Check key={index} type='radio' id={index} label={option} name="multiplechoices"/>
+        )
+      }
+    </Form.Group>
+  );
+}
+
+function LongTextInput(props) {
+  return(
+    <Form.Control as="textarea" rows="13" placeholder="hello"/>
   );
 }
 
@@ -137,45 +186,31 @@ const inputMap = {
   "SingleTextInput": SingleTextInput,
   "ButtonInput": ButtonInput,
   "DropdownInput": DropdownInput,
+  "CheckboxInput": CheckboxInput,
+  "MultipleChoiceInput": MultipleChoiceInput,
+  "LongTextInput": LongTextInput,
 };
 
 function Input(props) {
+
   const inputs = props.inputs;
 
   return (
-    inputs.map((input, index) => (<div key={index}>
+    <Card className="border-0 scroll mt-3 ml-5 mr-5 mb-5 pb-5">
+    {inputs.map((input, index) => (
+      <div key={index} className="pb-5">
       {React.createElement(inputMap[input.component.compName], input.component.compProps, input.component.compChildren)}
-      </div>))
+      </div>))}
+    </Card>
   );
 }
-
 
 class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currQuestion: 0, //index of current question
-      progress: 50,
-      showPopup: false,
     }
-  }
-
-  handleClick() {
-    switch(this.state.menuStatus)
-    {
-      case "open":
-        this.setState({
-          menuStatus:"close",
-          style:"menu active"
-        });
-        break;
-      case "close":
-        this.setState({
-          menuStatus:"open",
-          style:"menu"
-        });
-        break;
-    }        
   }
 
   getQuestionMetadata() {
@@ -190,7 +225,6 @@ class Template extends React.Component {
     }
   }
 
-
   handleBackClick() {
     if (this.state.currQuestion > 0) {
       this.setState({
@@ -199,6 +233,9 @@ class Template extends React.Component {
     }
   }
 
+  updateProgress() {
+    this.setState({progress: this.currQuestion/data.data.length})
+  }
 
   render() {
 
@@ -208,13 +245,11 @@ class Template extends React.Component {
     const label = metadata.question.label;
     const info = metadata.question.info;
     const inputs = metadata.inputs;
-    const popup= metadata.popup;
-
-
+    
     return(
       <div>
         <Header />
-        <ProgressBar now={this.state.progress} />
+        <ProgressBar now={(this.state.currQuestion+1)/data.data.length * 100} />
         <Question question={question} label={label} info={info}/>
         <Input inputs={inputs} />
         <Footer onNextClick={() => this.handleNextClick()} onBackClick={() => this.handleBackClick()}/>
