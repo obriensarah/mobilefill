@@ -150,9 +150,9 @@ function Input(props) {
   const inputs = props.inputs;
 
   return (
-    <Card className="border-0 scroll mt-3 ml-5 mr-5 mb-5">
+    <Card className="border-0 scroll mt-3 ml-5 mr-5 mb-5 pb-5">
     {inputs.map((input, index) => (
-      <div key={index}>
+      <div key={index} className="pb-5">
       {React.createElement(inputMap[input.component.compName], input.component.compProps, input.component.compChildren)}
       </div>))}
     </Card>
