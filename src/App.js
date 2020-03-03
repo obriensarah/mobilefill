@@ -12,7 +12,11 @@ import Modal from 'react-bootstrap/Modal';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {List, XSquare, ChevronLeft, InfoSquare} from 'react-bootstrap-icons'
-import data from './data';
+// import data from './data';
+import data from './yirou';
+// import data from './juan';
+
+console.log(data);
 
 
 class Header extends React.Component {
