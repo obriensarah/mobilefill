@@ -136,7 +136,13 @@ function MultipleChoiceInput(props) {
 
 function LongTextInput(props) {
   return(
-    <Form.Control as="textarea" rows="13" placeholder="hello"/>
+    <Form.Control as="textarea" rows="13" placeholder={props.placeHolder}/>
+  );
+}
+
+function NoInput(props) {
+  return(
+    <div></div>
   );
 }
 
@@ -147,6 +153,7 @@ const inputMap = {
   "CheckboxInput": CheckboxInput,
   "MultipleChoiceInput": MultipleChoiceInput,
   "LongTextInput": LongTextInput,
+  "NoInput": NoInput
 };
 
 function Input(props) {
