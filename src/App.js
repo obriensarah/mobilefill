@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,54 +18,44 @@ import data from './yirou';
 
 console.log(data);
 
-class Popup extends React.Component {
-  render() {
-    return (
-      <div className='popup'>
-        <div className='popup_inner'>
-          <h1>Text</h1>
-          <p>Some explaination</p>
-        <Button onClick={this.props.closePopup}>close</Button>
-        </div>
-      </div>
-    );
-  }
-}
 
-class Info extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showPopup: false,
-    }
-  }
-  togglePopup() {
-    this.setState({
-      showPopup: !this.state.showPopup
-    });
-  }
-  render() {
-    return (
-      <div>
-        <Button  id='info' onClick={this.togglePopup.bind(this)} variant="secondary">
+function Info(props) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return(
+    <div>
+        <Button  id='info' onClick={handleShow} variant="secondary">
           <InfoSquare color="ghostwhite" size={25} />
         </Button>
-        {this.state.showPopup ? 
-          <Popup closePopup={this.togglePopup.bind(this)}/>
-          : null
-        }
-      </div>
-    )
-  }
+        <Modal show={show} onHide={handleClose} animation={false}>
+          <Modal.Header closeButton>
+            <Modal.Title>Help</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{props.text}</Modal.Body>
+          <Modal.Body><b>Abuse is never the victim's fault. If you need help, try Illinois Domestic Violence Helpline: 877.863.6338</b></Modal.Body>
+          <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+        </Modal>
+    </div>
+  );
 }
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return(
         <Navbar bg="dark">
           <Navbar.Text><Button variant="secondary"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
-              <Info />
+              <Info text={this.props.info}/>
             </Navbar.Collapse>
         </Navbar>
       )
@@ -250,10 +240,13 @@ class Template extends React.Component {
     const label = metadata.question.label;
     const info = metadata.question.info;
     const inputs = metadata.inputs;
+
+    const extraInfo = metadata.extraInfo;
+    console.log(extraInfo);
     
     return(
       <div>
-        <Header />
+        <Header info={extraInfo}/>
         <ProgressBar now={(this.state.currQuestion+1)/data.data.length * 100} />
         <Question question={question} label={label} info={info}/>
         <Input inputs={inputs} />

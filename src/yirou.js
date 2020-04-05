@@ -1,10 +1,38 @@
+import React from 'react';
 const data = {
 	data: [
+	{
+			question:{
+				label: "Protection requested",
+				question: "Which types of abuse do you want to prevent?",				
+				info: "If you are unsure what the words after the boxes mean, you can click the top right corner for explanation."
+			},
+			inputs:[
+				{component: {
+					compName: "CheckboxInput",
+					compProps: {
+						options: [
+							"Harassment",
+							"Physical abuse",
+							"Stalking",
+							"Willful Deprivation",
+							"Intimidation of a Dependent ",
+							"Exploitation of a High-Risk Adult with Disabilities",
+							"Neglect of a High-Risk Adult with Disabilities",
+							"Interference with Personal Liberty",
+							"None of the above",
+						]
+					},
+					compChildren: {}
+				}},
+			],
+			extraInfo:<div><b>What is Abuse?</b><br />"Abuse" means physical abuse, harassment, intimidation of a dependent, interference with personal liberty, or willful deprivation but does not include reasonable direction of a minor child by a parent.<br /><br /><b>What is Harassment?</b><br />Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress:<br /> creating a disturbance at your place of work or school;<br />repeatedly telephoning your place of employment, house or school;<br />repeatedly following you in a public place or places;<br />repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking through your windows;<br />threatening physical force, confinement or restraint on one or more occasions; or<br />improperly concealing or threatening to conceal your child from you, removing your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br /><br /><b>What is Physical Abuse?</b><br />Physical abuse includes: <br />sexual abuse;<br />physical force;<br />confinement or restraint;<br />intentional, repeated and unnecessary sleep deprivation; or<br />any conduct which creates an immediate risk of physical harm.<br /><br /><b>What is Stalking?</b><br />Stalking means the Respondent knowingly and without lawful justification follows you or other persons protected in this Order of Protection in at least 2 separate occasions and places you under surveillance or threatens immediate or future harm to a person protected by this Order of Protection.<br /><br /><b>What is Willful Deprivation?</b><br />Denying a person access to medication, food, shelter or any other assistance they need resulting in their exposure to the risk of being harmed (physically, emotionally or mentally).<br /><br /><b>What is Intimidation of a Dependent?</b><br />Subjecting a person dependent to the Respondent because of age, health or disability to participate in or witness physical force, physical confinement, or restraint against any person.<br /><br /><b>What is Exploitation?</b><br />The illegal (including tortious) use of a high-risk adult with disabilities or of the assets or resources of a high-risk adult with disabilities. Exploitation includes the misappropriation of assets by:<br />undue influence;<br />breach of a fiduciary relationship;<br />fraud or deception;<br />extortion;<br />the illegal use of such assets or resources.</div>
+		},
 		{
 			question:{
 				label: "Disclaimer and Agreement",
 				question: "Help file for an Order of Protection",
-				info: "this site guides you through answering all the questions that are necessary to get an Order of Protection in Cook County, IL. The information you provide will be filled on the Order of Protection form that you submit to the court directly."
+				info: "This site guides you through answering all the questions that are necessary to get an Order of Protection in Cook County, IL. The information you provide will be filled on the Order of Protection form that you submit to the court directly."
 			},
 			inputs:[{
 				component: {
@@ -13,7 +41,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -28,7 +56,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -43,7 +71,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -58,7 +86,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -73,13 +101,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Disclaimer and Agreement",
 				question: "Only use this site if you agree with the following terms",
-				info: "This site does not give legal advice. Talk to a lawyer if you need legal help.\nYou must not use this site for any commercial purpose.\nYou are either low-income people or people without lawyers who access this site from a statewide legal aid website, pro bono website, or approved court website, nonprofit and charitable organization staff or authorized court staff who help other permitted users, or lawyers and their team who provide not-for-profit or reduced fee legal help to low-income people or nonprofit and charitable organizations."
+				info: "This site does not give legal advice. Talk to a lawyer if you need legal help.<br />You must not use this site for any commercial purpose.<br />You are either low-income people or people without lawyers who access this site from a statewide legal aid website, pro bono website, or approved court website, nonprofit and charitable organization staff or authorized court staff who help other permitted users, or lawyers and their team who provide not-for-profit or reduced fee legal help to low-income people or nonprofit and charitable organizations."
 			},
 			inputs:[{
 				component: {
@@ -88,7 +116,7 @@ const data = {
 					compChildren: "I agree. Take me to the form."
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -108,7 +136,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWho is a Family or Household Member?\n\n\nPersons related by blood or by present or prior marriage, such as:\nspouses or ex-spouses;\n parents, step-parents or grandparents;\nchildren or stepchildren\n\npersons who have or allegedly have a child in common, even if you have never been married nor lived together\n\npeople you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life\n\npersons who live with now or have lived with before\n\npersons who share or allegedly share a blood relationship through a child\n\nfor a person with disabilities, their personal assistants or caregivers"
+			extraInfo: <div><b>Who is a Family or Household Member?</b><br />Persons related by blood or by present or prior marriage, such as:<br />spouses or ex-spouses;<br /> parents, step-parents or grandparents;<br />children or stepchildren;<br />persons who have or allegedly have a child in common, even if you have never been married nor lived together;<br />people you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life;<br />persons who live with now or have lived with before;<br />persons who share or allegedly share a blood relationship through a child;<br />for a person with disabilities, their personal assistants or caregivers</div>
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -126,7 +154,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -144,7 +172,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -162,7 +190,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -180,7 +208,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -198,7 +226,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
@@ -216,7 +244,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -231,13 +259,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Qualification questions",
 				question: "Qualification questions",				
-				info: "This section asks for the most basic information of your Petition, including: \nWhere you are;\nWho needs protection;\nAgainst whom you want an Order of Protection;\nWhat kind of Order of Protection do you need.\n\nAs always, if you need help, you can find help information at the top right corner."
+				info: "This section asks for the most basic information of your Petition, including: <br />Where you are;<br />Who needs protection;<br />Against whom you want an Order of Protection;<br />What kind of Order of Protection do you need.<br />As always, if you need help, you can find help information at the top right corner."
 			},
 			inputs:[{
 				component: {
@@ -246,7 +274,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//??: is question "List of Illinois counties (drop down)" necessary now that we're building for cook county?
@@ -270,13 +298,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Qualification questions",
 				question: "Why are you filing for this Order of Protection in Cook County?",
-				info: "Select all that is true. \nIf none of these apply, you cannot file in the Cook County.",
+				info: "Select all that is true. <br />If none of these apply, you cannot file in the Cook County.",
 			},
 			inputs:[
 				{component: {
@@ -292,7 +320,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -328,7 +356,7 @@ const data = {
 					},
 					compChildren: {}
 				}}],
-			extraInfo:"Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWho is an adult with disabilities?\n\n\nAdult with Disabilities is either:\nAn elder adult with disabilities, an adult prevented by advanced age from taking appropriate action to protect himself or herself from abuse by a family or household member; or\na high-risk adult with disabilities, a person aged 18 or over whose physical or mental disability impairs his or her ability to seek or obtain protection from abuse, neglect, or exploitation.\n\n\n\nWho is considered a caregiver?\n\na family member by blood or marriage who lives with you or regularly visits, and who knows or should know about your physical or mental impairment and that you cannot care for yourself;\na person who is employed to live with you or regularly visit you to take care of you;\na person who, for payments or other paybacks, agrees to live with you or regularly visit you and take care of you; or\na person who has been appointed by a private or public agency or by a court to take care of you.\n\nFor purposes of this Order of Protection the following persons are not considered caregivers:\na person who works at a licensed or certified nursing home or rehabilitation facility; or\na healthcare provider who is giving regular medical care to an adult with disabilities."
+			extraInfo:<div><b>Who is an adult with disabilities?</b><br />Adult with Disabilities is either:<br />An elder adult with disabilities;<br/> an adult prevented by advanced age from taking appropriate action to protect himself or herself from abuse by a family or household member; or<br />a high-risk adult with disabilities, a person aged 18 or over whose physical or mental disability impairs his or her ability to seek or obtain protection from abuse, neglect, or exploitation.<br /><br/><b>Who is considered a caregiver?</b><br />A family member by blood or marriage who lives with you or regularly visits, and who knows or should know about your physical or mental impairment and that you cannot care for yourself;<br />a person who is employed to live with you or regularly visit you to take care of you;<br />a person who, for payments or other paybacks, agrees to live with you or regularly visit you and take care of you; or<br />a person who has been appointed by a private or public agency or by a court to take care of you.<br /><br />For purposes of this Order of Protection the following persons are not considered caregivers:<br />a person who works at a licensed or certified nursing home or rehabilitation facility; or<br />a healthcare provider who is giving regular medical care to an adult with disabilities.</div>
 		},
 		{
 			question:{
@@ -350,13 +378,13 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWho is a Family or Household Member?\n\n\nPersons related by blood or by present or prior marriage, such as:\nspouses or ex-spouses;\n parents, step-parents or grandparents;\nchildren or stepchildren\n\npersons who have or allegedly have a child in common, even if you have never been married nor lived together\n\npeople you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life\n\npersons who live with now or have lived with before\n\npersons who share or allegedly share a blood relationship through a child\n\nfor a person with disabilities, their personal assistants or caregivers."
+			extraInfo: <div><b>Who is a Family or Household Member?</b><br />Persons related by blood or by present or prior marriage, such as:<br />spouses or ex-spouses;<br /> parents, step-parents or grandparents;<br />children or stepchildren;<br />persons who have or allegedly have a child in common, even if you have never been married nor lived together;<br />people you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life;<br />persons who live with now or have lived with before;<br />persons who share or allegedly share a blood relationship through a child;<br />for a person with disabilities, their personal assistants or caregivers.</div>
 		},
 		{
 			question:{//nested, appear if both questions' answers are "none of these apply"
 				label: "Qualification questions",
 				question: "You seem not qualified for Order of Protection",
-				info: "You need to have the relationship(s) we listed to get an Order of Protection.\nIf you need protection and have other relationship with the Respondent, look into Civil No Contact Order or Stalking No Contact Order."
+				info: "You need to have the relationship(s) we listed to get an Order of Protection.<br />If you need protection and have other relationship with the Respondent, look into Civil No Contact Order or Stalking No Contact Order."
 			},
 			inputs:[{
 				component: {
@@ -365,13 +393,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Qualification Question",
 				question: "What is your name?",
-				info: "Enter the name of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. On the form, your name will appear as the Petitioner.\nTo court advocate or helper: enter the petitioner's name here, not yours."
+				info: "Enter the name of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. On the form, your name will appear as the Petitioner.<br />To court advocate or helper: enter the petitioner's name here, not yours."
 			},
 			inputs:[{
 				component: {
@@ -383,13 +411,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Qualification Question",
 				question: "What is your birthdate?",
-				info: "Enter the birthdate of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. \nTo court advocate or helper: enter the petitioner's birthdate here, not yours."
+				info: "Enter the birthdate of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. <br />To court advocate or helper: enter the petitioner's birthdate here, not yours."
 			},
 			inputs:[{
 				component: {
@@ -401,7 +429,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -414,14 +442,14 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse.\nSelect this if you want an Order of Protection right now. This may be extended to a Plenary Order of Protection later.",
-							"A Plenary Order of Protection that requires the abuser to get notice and a copy of your Petition before the court hearing.\nSelect this only if you do not wish an Emergency Order of Protection."
+							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse.<br />Select this if you want an Order of Protection right now. This may be extended to a Plenary Order of Protection later.",
+							"A Plenary Order of Protection that requires the abuser to get notice and a copy of your Petition before the court hearing.<br />Select this only if you do not wish an Emergency Order of Protection."
 						]
 					},
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat will happen if I apply for an Emergency Order of Protection?\n\n\nNo Need to Meet Respondent: To get an Emergency Order, you don’t need to meet the Respondent at court in person. Nor will the judge contact the Respondent before deciding this matter. \nNote that once the Emergency Order of Protection is granted, the Court will send the Respondent a copy of your Emergency Order of Protection. This is to let the Respondent know the consequences if he or she doesn’t obey.\n\nSimpler Procedures: The judge will consider if you need immediate protection based on what you describe in this Petition. If the answer is yes, he or she will grant you an Emergency Order of Protection.\n\nShorter Duration: An Emergency Order typically lasts up to 21 days but sometimes can be extended. \n\nLimited Protection: If ordered to stay away from the protected person, the Respondent must not have ANY physical, non-physical, direct or indirect contact with the protected person. But some types of protection can only be offered by a Plenary Order. \n\n\n\n\nWhat will happen if I apply for a Plenary Order of Protection?\n\n\nNeed to Meet Respondent: A Plenary (final) Order of Protection offers longer protection than an Emergency Order, so the Respondent will need to be in person at a Hearing. The judge will not grant the Plenary Order if the Petitioner does not show up. On the contrary, if the Respondent does not show up, the Petition gets a Plenary Order.\n\nMore Formal Procedures: During the Hearing, you and the Respondent will both present evidence to the judge. \n\nLonger Duration: A Plenary Order of Protection lasts up to 2 years, with extensions possible.\n\nMore Extensive Protection: A Plenary Order can include more remedies that cannot be granted by an Emergency Order, such as payment of support or monetary compensation."
+			extraInfo: <div><b>What will happen if I apply for an Emergency Order of Protection?</b><br /><br />No Need to Meet Respondent: To get an Emergency Order, you don’t need to meet the Respondent at court in person. Nor will the judge contact the Respondent before deciding this matter. <br />Note that once the Emergency Order of Protection is granted, the Court will send the Respondent a copy of your Emergency Order of Protection. This is to let the Respondent know the consequences if he or she doesn’t obey.<br /><br />Simpler Procedures: The judge will consider if you need immediate protection based on what you describe in this Petition. If the answer is yes, he or she will grant you an Emergency Order of Protection.<br /><br />Shorter Duration: An Emergency Order typically lasts up to 21 days but sometimes can be extended. <br /><br />Limited Protection: If ordered to stay away from the protected person, the Respondent must not have ANY physical, non-physical, direct or indirect contact with the protected person. But some types of protection can only be offered by a Plenary Order. <br /><br /><b>What will happen if I apply for a Plenary Order of Protection?</b><br /><br />Need to Meet Respondent: A Plenary (final) Order of Protection offers longer protection than an Emergency Order, so the Respondent will need to be in person at a Hearing. The judge will not grant the Plenary Order if the Petitioner does not show up. On the contrary, if the Respondent does not show up, the Petition gets a Plenary Order.<br /><br />More Formal Procedures: During the Hearing, you and the Respondent will both present evidence to the judge. <br /><br />Longer Duration: A Plenary Order of Protection lasts up to 2 years, with extensions possible.<br /><br />More Extensive Protection: A Plenary Order can include more remedies that cannot be granted by an Emergency Order, such as payment of support or monetary compensation.</div>
 		},
 		{
 			question:{
@@ -441,7 +469,7 @@ const data = {
 			question:{
 				label: "communication",
 				question: "Address, phone and email of solicitor",
-				info: "This section asks how you want the court to communicate with you. Please get these information at hand:\nYour address (this doesn’t need to be your real address)\nOptionally, your email (this can be an email created just for filling for an Order of Protection that you regularly check)\n\nAs always, if you need help, you can find help information at the top right corner."
+				info: "This section asks how you want the court to communicate with you. Please get these information at hand:<br />Your address (this doesn’t need to be your real address)<br />Optionally, your email (this can be an email created just for filling for an Order of Protection that you regularly check)<br />As always, if you need help, you can find help information at the top right corner."
 			},
 			inputs:[{
 				component: {
@@ -450,7 +478,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -463,17 +491,17 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"I want to hide my real address and use another address where I can receive mail about this case\nSelect this if you do not want Respondent to know where you live, and have a different address where you can get mail.",
+							"I want to hide my real address and use another address where I can receive mail about this case<br />Select this if you do not want Respondent to know where you live, and have a different address where you can get mail.",
 							"I want to use my real address"
 						]//abnormalinput: notes for separate option
 					},
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
-			question:{//nested under "I want to hide my real address and use another address where I can receive mail about this case\nSelect this if you do not want Respondent to know where you live, and have a different address where you can get mail."
+			question:{//nested under "I want to hide my real address and use another address where I can receive mail about this case<br />Select this if you do not want Respondent to know where you live, and have a different address where you can get mail."
 				label: "communication",
 				question: "Enter an address where you will receive mail related to this Order of Protection.",
 				info: "The address should not be where you are staying since you want to hide your real address. Including apartment, suite, or floor #."
@@ -488,7 +516,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "I want to use my real address."
@@ -506,7 +534,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -524,7 +552,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -542,7 +570,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -560,7 +588,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{				
@@ -578,13 +606,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},		
 		{
 			question:{				
 				label: "communication",
 				question: "Would you like to receive documents in this case by email?",
-				info: "Your email address will appear on the court forms. \nYou can use a new email that is created just for Order of Protection purpose and not shared with others."
+				info: "Your email address will appear on the court forms. <br />You can use a new email that is created just for Order of Protection purpose and not shared with others."
 			},
 			inputs:[
 				{component: {
@@ -598,13 +626,13 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},		
 		{
 			question:{//nested under "Yes"			
 				label: "communication",
 				question: "Enter your email address.",
-				info: "\nYou can use a new email that is created just for Order of Protection purpose and not shared with others. \nRemember to check the email regularly in case you miss important information about your case. "
+				info: "<br />You can use a new email that is created just for Order of Protection purpose and not shared with others. <br />Remember to check the email regularly in case you miss important information about your case. "
 			},
 			inputs:[{
 				component: {
@@ -616,7 +644,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -631,13 +659,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Protected People",
 				question: "Protected People",				
-				info: "This section asks for more details about the person that needs protection, such as their names. Please keep your answers consistent with what you have answered in the Qualification Questions section.\n\nAs always, if you need help, you can find help information at the top right corner."},
+				info: "This section asks for more details about the person that needs protection, such as their names. Please keep your answers consistent with what you have answered in the Qualification Questions section.<br />As always, if you need help, you can find help information at the top right corner."},
 			inputs:[{
 				component: {
 					compName: "NoInput",
@@ -645,7 +673,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{				
@@ -665,7 +693,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},		
 		{
 			question:{//nested under "Yes"			
@@ -685,7 +713,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "Yes"			
@@ -703,7 +731,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//abnormalinput: nested conditioned on "how many minor children"		
@@ -721,7 +749,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//abnormalinput: nested conditioned on "how many minor children"		
@@ -739,7 +767,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//abnormalinput: nested conditioned on "how many minor children"		
@@ -757,7 +785,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//abnormalinput: nested conditioned on "how many minor children"		
@@ -777,7 +805,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{			
@@ -797,7 +825,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Yes."
@@ -815,7 +843,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{			
@@ -835,7 +863,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Yes."
@@ -853,7 +881,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{			
@@ -873,7 +901,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo:"Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWho is a High-Risk Adult with Disabilities?\nA person aged 18 or over whose physical or mental disability impairs their ability to seek or obtain protection from abuse, neglect, or exploitation."
+			extraInfo:<div><b>Who is a High-Risk Adult with Disabilities?</b><br />A person aged 18 or over whose physical or mental disability impairs their ability to seek or obtain protection from abuse, neglect, or exploitation.</div>
 		},
 		{
 			question:{//nested under "Yes."
@@ -891,7 +919,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo:"Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWho is a High-Risk Adult with Disabilities?\nA person aged 18 or over whose physical or mental disability impairs their ability to seek or obtain protection from abuse, neglect, or exploitation."
+			extraInfo:<div><b>Who is a High-Risk Adult with Disabilities?</b><br />A person aged 18 or over whose physical or mental disability impairs their ability to seek or obtain protection from abuse, neglect, or exploitation.</div>
 		},	
 		{
 			question:{			
@@ -911,7 +939,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Yes."
@@ -929,7 +957,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 			{
 			question:{
@@ -944,13 +972,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Person you want protection from",
 				question: "Person you want protection from",				
-				info: "This section asks for more details about the person against whom you want an Order of Protection. Again, please keep your answers consistent with what you have answered in the Qualification questions section.\nYou will need to provide the basic information such as his or her name, gender, race. \nIf you are not sure of the answer, you can write “do not know” under some questions, such as the person’s address, existing Order of Protection against him/her, or court cases against him/her that also involves you.\n\nAs always, if you need help, you can find help information at the top right corner."			},
+				info: "This section asks for more details about the person against whom you want an Order of Protection. Again, please keep your answers consistent with what you have answered in the Qualification questions section.<br />You will need to provide the basic information such as his or her name, gender, race. <br />If you are not sure of the answer, you can write “do not know” under some questions, such as the person’s address, existing Order of Protection against him/her, or court cases against him/her that also involves you.<br />As always, if you need help, you can find help information at the top right corner."			},
 			inputs:[{
 				component: {
 					compName: "NoInput",
@@ -958,7 +986,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -976,7 +1004,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -994,7 +1022,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1015,7 +1043,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1041,7 +1069,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1057,7 +1085,7 @@ const data = {
 						placeHolder: "Illinois"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1073,13 +1101,13 @@ const data = {
 						placeHolder: "Chicago"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
 				label: "Person you want protection from",
 				question: "To your best knowledge, where does the Respondent live now?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, write \"do not know.\""
+				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -1089,7 +1117,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1106,7 +1134,7 @@ const data = {
 					},
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1126,7 +1154,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -1144,7 +1172,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -1161,13 +1189,13 @@ const data = {
 					},
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Person you want protection from",
 				question: "To your best knowledge, where is the Respondent's employer?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, please leave it blank."
+				info: "Including apartment, suite, or floor #.<br />If unknown, please leave it blank."
 			},
 			inputs:[{
 				component: {
@@ -1177,7 +1205,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Yes."
@@ -1193,13 +1221,13 @@ const data = {
 						placeHolder: "60607"
 					}
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "Yes."
 				label: "Person you want protection from",
 				question: "Enter the work hours of the Respondent for the employer.",
-				info: "For example, 9:00 am to 5:00 pm.\nIf unknown, please leave it blank."
+				info: "For example, 9:00 am to 5:00 pm.<br />If unknown, please leave it blank."
 			},
 			inputs:[{
 				component: {
@@ -1209,7 +1237,7 @@ const data = {
 						placeHolder: "9:00 am to 5:00 pm"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1229,7 +1257,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1249,7 +1277,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1270,7 +1298,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1288,7 +1316,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1306,7 +1334,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1324,7 +1352,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1342,7 +1370,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1360,7 +1388,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1381,7 +1409,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1399,13 +1427,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Person you want protection from",
 				question: "What is the type of this case?",
-				info: "For example, divorce, custody, child support, paternity, parenting time, guardianship, adoption, and abuse and neglect cases.\nIf you do not know the information asked for, then write \"do not know.\""
+				info: "For example, divorce, custody, child support, paternity, parenting time, guardianship, adoption, and abuse and neglect cases.<br />If you do not know the information asked for, then write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -1417,7 +1445,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1435,7 +1463,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1453,7 +1481,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1468,7 +1496,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1483,13 +1511,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Reasons for the protective order",
 				question: "Reasons for the protective order",			
-				info: "You need to describe the incidents of abuse in this section. This is because to decide whether to grant an Order of Protection (including Emergency Order of Protection), the judge needs to know what happened exactly. \nYou can include up to 9 incidents of any past abuses (and any criminal conviction that resulted) from the Respondent. "
+				info: "You need to describe the incidents of abuse in this section. This is because to decide whether to grant an Order of Protection (including Emergency Order of Protection), the judge needs to know what happened exactly. <br />You can include up to 9 incidents of any past abuses (and any criminal conviction that resulted) from the Respondent. "
 			},
 			inputs:[{
 				component: {
@@ -1498,13 +1526,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Reasons for the protective order",
 				question: "Suggestion for Writing About Abuse Incidents",				
-				info: "You may find these suggestions useful:\n\n Were you emotionally abused? \n Where you hit with a close hand? \n Did the abuser use any instruments to hurt you? \n If you have children, were they hurt by the abuser? \n Was the abuser the influence of any substance? \n\nYou can always refer to this Suggestion List at the top right corner."
+				info: "You may find these suggestions useful:<br /> Were you emotionally abused? <br /> Where you hit with a close hand? <br /> Did the abuser use any instruments to hurt you? <br /> If you have children, were they hurt by the abuser? <br /> Was the abuser the influence of any substance? <br />You can always refer to this Suggestion List at the top right corner."
 			},
 			inputs:[{
 				component: {
@@ -1513,13 +1541,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Reasons for the protective order",
 				question: "Tip: Draft Somewhere Else First, Copy-Paste Here Later",				
-				info: "Writing about abuse experiences can be hard. You may need details that are not at hand, or you simply need more time to figure things out.\nIf it is more comfortable to you, you can take a look at this section, leave it blank for now, draft your experiences somewhere secure, and copy-paste your finished descriptions into this section later."
+				info: "Writing about abuse experiences can be hard. You may need details that are not at hand, or you simply need more time to figure things out.<br />If it is more comfortable to you, you can take a look at this section, leave it blank for now, draft your experiences somewhere secure, and copy-paste your finished descriptions into this section later."
 			},
 			inputs:[{
 				component: {
@@ -1528,13 +1556,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Reasons for the protective order",
 				question: "Tip: Start with what happened most recently",				
-				info: "Please input first what happened most recently, then enter in reverse chronological order. \nYou may find it more comfortable to draft your experiences somewhere secure, and copy-paste your finished descriptions here later."
+				info: "Please input first what happened most recently, then enter in reverse chronological order. <br />You may find it more comfortable to draft your experiences somewhere secure, and copy-paste your finished descriptions here later."
 			},
 			inputs:[{
 				component: {
@@ -1543,7 +1571,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1561,7 +1589,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 			{
 			question:{
@@ -1579,13 +1607,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Reasons for the protective order",
 				question: "What did Respondent do to you, and or the other persons for whom you want an Order of Protection?",				
-				info: "Be specific, and describe the effect that this incident has had on you or the other persons.\nYou can always refer to this Suggestion List at the top right corner."
+				info: "Be specific, and describe the effect that this incident has had on you or the other persons.<br />You can always refer to this Suggestion List at the top right corner."
 			},
 			inputs:[{
 				component: {
@@ -1595,7 +1623,7 @@ const data = {
 					},
 				compChildren: null
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1615,7 +1643,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1630,13 +1658,13 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
 				label: "Protection requested",
 				question: "Protection requested",				
-				info: "This section asks for the types of abuse that you want to prevent, and the details of the protection sought. Think about the types of protections you need, such as: \nNo communication;\nStaying physically away;\nArrangements if the Respondent attend the same school with the person who needs protection;\nOther arrangements about properties, pets and cell phone accounts\nIf other types of protection are needed but not included in this section, you can fill them later at the “Miscellaneous Remedies & Case Number” section of this Form.\n\nAs always, if you need help, you can find help information at the top right corner."
+				info: "This section asks for the types of abuse that you want to prevent, and the details of the protection sought. Think about the types of protections you need, such as: <br />No communication;<br />Staying physically away;<br />Arrangements if the Respondent attend the same school with the person who needs protection;<br />Other arrangements about properties, pets and cell phone accounts<br />If other types of protection are needed but not included in this section, you can fill them later at the “Miscellaneous Remedies & Case Number” section of this Form.<br />As always, if you need help, you can find help information at the top right corner."
 			},
 			inputs:[{
 				component: {
@@ -1645,7 +1673,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1672,7 +1700,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo:"Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat is Abuse?\n\n\"Abuse\" means physical abuse, harassment, intimidation of a dependent, interference with personal liberty, or willful deprivation but does not include reasonable direction of a minor child by a parent.\n\n\n\n\nWhat is Harassment?\n\nHarassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress:\n creating a disturbance at your place of work or school;\nrepeatedly telephoning your place of employment, house or school;\nrepeatedly following you in a public place or places;\nrepeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows;\nthreatening physical force, confinement or restraint on one or more occasions; or\nimproperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.\n\n\n\n\nWhat is Physical Abuse?\n\nPhysical abuse includes: \nsexual abuse;\nphysical force;\nconfinement or restraint;\nintentional, repeated and unnecessary sleep deprivation; or\nany conduct which creates an immediate risk of physical harm.\n\n\n\n\nWhat is Stalking?\n\nStalking means the Respondent knowingly and without lawful justification follows you or other persons protected in this Order of Protection in at least 2 separate occasions and places you under surveillance or  threatens immediate or future harm to a person protected by this Order of Protection.\n\n\n\n\nWhat is Willful Deprivation?\n\nDenying a person access to medication, food, shelter or any other assistance they need resulting in their exposure to the risk of being harmed (physically, emotionally or mentally).\n\n\n\n\nWhat is Intimidation of a Dependent?\n\nSubjecting a person dependent to the Respondent because of age, health or disability to participate in or witness physical force, physical confinement, or restraint against any person.\n\n\n\n\nWhat is Exploitation?\n\nThe illegal (including tortious) use of a high-risk adult with disabilities or of the assets or resources of a high-risk adult with disabilities. Exploitation includes the misappropriation of assets by:\nundue influence;\nbreach of a fiduciary relationship;\nfraud or deception;\nextortion;\nthe illegal use of such assets or resources."
+			extraInfo:<div><b>What is Abuse?</b><br />"Abuse" means physical abuse, harassment, intimidation of a dependent, interference with personal liberty, or willful deprivation but does not include reasonable direction of a minor child by a parent.<br /><br /><b>What is Harassment?</b><br />Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress:<br /> creating a disturbance at your place of work or school;<br />repeatedly telephoning your place of employment, house or school;<br />repeatedly following you in a public place or places;<br />repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking through your windows;<br />threatening physical force, confinement or restraint on one or more occasions; or<br />improperly concealing or threatening to conceal your child from you, removing your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br /><br /><b>What is Physical Abuse?</b><br />Physical abuse includes: <br />sexual abuse;<br />physical force;<br />confinement or restraint;<br />intentional, repeated and unnecessary sleep deprivation; or<br />any conduct which creates an immediate risk of physical harm.<br /><br /><b>What is Stalking?</b><br />Stalking means the Respondent knowingly and without lawful justification follows you or other persons protected in this Order of Protection in at least 2 separate occasions and places you under surveillance or threatens immediate or future harm to a person protected by this Order of Protection.<br /><br /><b>What is Willful Deprivation?</b><br />Denying a person access to medication, food, shelter or any other assistance they need resulting in their exposure to the risk of being harmed (physically, emotionally or mentally).<br /><br /><b>What is Intimidation of a Dependent?</b><br />Subjecting a person dependent to the Respondent because of age, health or disability to participate in or witness physical force, physical confinement, or restraint against any person.<br /><br /><b>What is Exploitation?</b><br />The illegal (including tortious) use of a high-risk adult with disabilities or of the assets or resources of a high-risk adult with disabilities. Exploitation includes the misappropriation of assets by:<br />undue influence;<br />breach of a fiduciary relationship;<br />fraud or deception;<br />extortion;<br />the illegal use of such assets or resources.</div>
 		},
 		{
 			question:{
@@ -1692,7 +1720,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1712,7 +1740,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -1732,7 +1760,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -1748,7 +1776,7 @@ const data = {
 						placeHolder: "Illinois"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1764,13 +1792,13 @@ const data = {
 						placeHolder: "Chicago"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of the residence you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, write \"do not know.\""
+				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -1780,7 +1808,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1796,7 +1824,7 @@ const data = {
 						placeHolder: "60607"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -1816,7 +1844,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -1832,7 +1860,7 @@ const data = {
 						placeHolder: "Acme Corporation"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1848,7 +1876,7 @@ const data = {
 						placeHolder: "Illinois"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1864,13 +1892,13 @@ const data = {
 						placeHolder: "Chicago"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of the place of employment you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, write \"do not know.\""
+				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -1880,7 +1908,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1896,7 +1924,7 @@ const data = {
 						placeHolder: "60607"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes" abnormalinput: up to two employment addresses
@@ -1916,7 +1944,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 ///
 		{
@@ -1937,7 +1965,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -1957,7 +1985,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1973,7 +2001,7 @@ const data = {
 						placeHolder: "Acme Corporation"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -1989,7 +2017,7 @@ const data = {
 						placeHolder: "Illinois"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2005,13 +2033,13 @@ const data = {
 						placeHolder: "Chicago"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of this school or day-care center you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, write \"do not know.\""
+				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -2021,7 +2049,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2037,7 +2065,7 @@ const data = {
 						placeHolder: "60607"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2057,7 +2085,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2091,7 +2119,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes" abnormalinput: up to two employment addresses
@@ -2111,7 +2139,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2131,7 +2159,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2151,7 +2179,7 @@ const data = {
 					compChildren: {}
 				}}
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -2171,7 +2199,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "yes"
@@ -2187,7 +2215,7 @@ const data = {
 						placeHolder: "Acme Corporation"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2203,7 +2231,7 @@ const data = {
 						placeHolder: "Illinois"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2219,13 +2247,13 @@ const data = {
 						placeHolder: "Chicago"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of this location you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.\nIf unknown, write \"do not know.\""
+				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
 			},
 			inputs:[{
 				component: {
@@ -2235,7 +2263,7 @@ const data = {
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2251,7 +2279,7 @@ const data = {
 						placeHolder: "60607"
 					},
 			}}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes" abnormalinput: up to two addresses
@@ -2271,7 +2299,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 ///
 		{
@@ -2294,7 +2322,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
@@ -2312,7 +2340,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
@@ -2330,7 +2358,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
@@ -2348,13 +2376,13 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
 				label: "Protection requested",
 				question: "What is the address of the residence you want exclusive possession?",
-				info: "If you did not list your actual address in previous questions, write “PROTECTED ADDRESS” instead.\nIncluding apartment, suite, or floor #."
+				info: "If you did not list your actual address in previous questions, write “PROTECTED ADDRESS” instead.<br />Including apartment, suite, or floor #."
 			},
 			inputs:[{
 				component: {//abnormalinput: can we call/show here the residence address that has been entered previously?
@@ -2366,7 +2394,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
@@ -2386,7 +2414,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -2406,7 +2434,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2425,7 +2453,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2445,7 +2473,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes" of "Among these personal properties you listed, is there anything that is currently possessed by the Respondent and you want back?"
@@ -2464,7 +2492,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes" of "Among these personal properties you listed, is there anything that is currently possessed by the Respondent and you want back?"
@@ -2485,7 +2513,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "I claim or will claim the property as marital property in a divorce case." of "Among these personal properties you listed, is there anything that is currently possessed by the Respondent and you want back?"
@@ -2505,7 +2533,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -2525,7 +2553,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "yes"
@@ -2546,7 +2574,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested if "Other personal property" is checked
@@ -2565,7 +2593,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{
@@ -2578,14 +2606,14 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"At the residence \n(Select this if you agree to let the abuser enter the residence once to get their things)",//abnormalinput: need residence address that has been entered previously to pop up
+							"At the residence <br />(Select this if you agree to let the abuser enter the residence once to get their things)",//abnormalinput: need residence address that has been entered previously to pop up
 							"At another location"
 						]
 					},
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		{
 			question:{//nested under "At another location."
@@ -2603,7 +2631,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "At another location."
@@ -2621,7 +2649,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "At another location."
@@ -2639,7 +2667,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "At another location."
@@ -2657,7 +2685,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2677,7 +2705,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Someone else"
@@ -2695,7 +2723,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2708,14 +2736,14 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"Law enforcement officials\nIt may be safer if the transfer is in the presence of a law enforcement officer.",
+							"Law enforcement officials<br />It may be safer if the transfer is in the presence of a law enforcement officer.",
 							"A third person"
 						]
 					},
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "Law enforcement officials"
@@ -2733,7 +2761,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{//nested under "A third person"
@@ -2751,7 +2779,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2769,7 +2797,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2787,7 +2815,7 @@ const data = {
 					compChildren: {}
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 
 
@@ -2811,7 +2839,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  //IF LAST QUESTION WAS YES//
@@ -2829,7 +2857,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2850,7 +2878,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ /// If the victim selected the divorce option
@@ -2870,7 +2898,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2891,7 +2919,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2912,7 +2940,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2932,7 +2960,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ /// If last question was yes
@@ -2950,7 +2978,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2970,7 +2998,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -2990,7 +3018,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ /// If last question was yes
@@ -3008,7 +3036,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ /// If last question was yes
@@ -3026,7 +3054,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3041,7 +3069,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		/// Remedies regarding children
 		/// (This part appears only if the victim has children younger than 18 with the Respondent.)
@@ -3049,7 +3077,7 @@ const data = {
 			question:{
 				label: "Remedies regarding children",
 				question: "Remedies regarding children",			
-				info: "This section appears because you answered the person who needs protection has children younger than 18 with the Respondent. If this is not the case, come back and change your answer.\nYou need to provide information about the children.\nSome of the protections available are return of the children, restriction against hiding or removing the children from Illinois, and specified parenting time."
+				info: "This section appears because you answered the person who needs protection has children younger than 18 with the Respondent. If this is not the case, come back and change your answer.<br />You need to provide information about the children.<br />Some of the protections available are return of the children, restriction against hiding or removing the children from Illinois, and specified parenting time."
 			},
 			inputs:[{
 				component: {
@@ -3058,7 +3086,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3079,7 +3107,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			
@@ -3099,7 +3127,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3119,7 +3147,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3139,7 +3167,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3159,7 +3187,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last answer was no
@@ -3179,7 +3207,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // if last question was answered yes
@@ -3199,7 +3227,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ /// If last answer was someone else
@@ -3217,7 +3245,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3235,7 +3263,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3255,7 +3283,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3273,7 +3301,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3291,7 +3319,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3309,7 +3337,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 /// Parentage of the children
 		{
@@ -3331,7 +3359,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If victim selected not married but paternity has been established
@@ -3353,7 +3381,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // if last question was answered other
@@ -3371,7 +3399,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 /// Parenting Time
 		{
@@ -3394,7 +3422,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If deny parenting time option was selected
@@ -3416,7 +3444,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-	 	extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat's Harassment? \n\n\n\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: \n - creating a disturbance at your place of work or school; \n - repeatedly telephoning your place of employment, house or school; \n - repeatedly following you in a public place or places; \n - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; \n - threatening physical force, confinement or restraint on one or more occasions; or \n - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.\n\n\n\n\n\nWho is a Family or Household Member? \n\n\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren \n Persons who have or allegedly have a child in common, even if you have never been married nor lived together \n People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life \n Persons who live with you now or have lived with you before \n Persons who share or allegedly share a blood relationship through a child \n For a person with disabilities, their personal assistants or caregivers."	
+	 	extraInfo: "<br />What's Harassment? <br />\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br /> - creating a disturbance at your place of work or school; <br /> - repeatedly telephoning your place of employment, house or school; <br /> - repeatedly following you in a public place or places; <br /> - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br /> - threatening physical force, confinement or restraint on one or more occasions; or <br /> - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br />Who is a Family or Household Member? <br />\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life <br /> Persons who live with you now or have lived with you before <br /> Persons who share or allegedly share a blood relationship through a child <br /> For a person with disabilities, their personal assistants or caregivers."	
 		},
 		{
 			question:{  // If restrict parenting time option was selected
@@ -3438,7 +3466,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat's Harassment? \n\n\n\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: \n - creating a disturbance at your place of work or school; \n - repeatedly telephoning your place of employment, house or school; \n - repeatedly following you in a public place or places; \n - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; \n - threatening physical force, confinement or restraint on one or more occasions; or \n - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.\n\n\n\n\n\nWho is a Family or Household Member? \n\n\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren \n Persons who have or allegedly have a child in common, even if you have never been married nor lived together \n People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life \n Persons who live with you now or have lived with you before \n Persons who share or allegedly share a blood relationship through a child \n For a person with disabilities, their personal assistants or caregivers."	
+		extraInfo: "<br />What's Harassment? <br />\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br /> - creating a disturbance at your place of work or school; <br /> - repeatedly telephoning your place of employment, house or school; <br /> - repeatedly following you in a public place or places; <br /> - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br /> - threatening physical force, confinement or restraint on one or more occasions; or <br /> - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br />Who is a Family or Household Member? <br />\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life <br /> Persons who live with you now or have lived with you before <br /> Persons who share or allegedly share a blood relationship through a child <br /> For a person with disabilities, their personal assistants or caregivers."	
 		},
 		{
 			question:{  // If allow parenting time option was selected
@@ -3458,7 +3486,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If allow parenting time option was selected
@@ -3479,7 +3507,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If select parenting time in this questionnaire option was selected
@@ -3497,7 +3525,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If select parenting time in this questionnaire option was selected
@@ -3518,7 +3546,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // if last question was answered other
@@ -3536,7 +3564,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If descfribe a short summary of parenting time was selected 
@@ -3554,7 +3582,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If descfribe a short summary of parenting time was selected 
@@ -3572,7 +3600,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If descfribe a short summary of parenting time was selected 
@@ -3593,7 +3621,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // if last question was answered other
@@ -3611,7 +3639,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 	// Parenting Time Location Details 
 	// This part appears only if the victim has children younger than 18 with the Respondent.)
@@ -3635,7 +3663,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If Other location option was selected
@@ -3653,7 +3681,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If Other location option was selected
@@ -3671,7 +3699,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  
@@ -3691,7 +3719,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If last querstion was answered yes
@@ -3711,7 +3739,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If person I know option is selected 
@@ -3729,7 +3757,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If person I know option is selected 
@@ -3747,7 +3775,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		// Parenting Time Holiday Schedule
 		// (This part appears only if the victim has children younger than 18 with the Respondent.)
@@ -3777,7 +3805,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3797,7 +3825,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If yes is selected on last question 
@@ -3815,7 +3843,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3833,7 +3861,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		// Other Remedies for Children
 		{
@@ -3856,7 +3884,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -3871,7 +3899,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		// Firearms Information
 		{
@@ -3887,7 +3915,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3908,7 +3936,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -3928,7 +3956,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was answered as yes
@@ -3948,7 +3976,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was answered optiom 1 or 2
@@ -3970,7 +3998,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If selected the option keep a firearm in their car
@@ -3988,7 +4016,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -4003,14 +4031,14 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		// Support and Expenses
 		{
 			question:{
 				label: "Support and Expenses",
 				question: "Support and Expenses",			
-				info: "For this section, if you want the Respondent to pay support or repay you for expenses that resulted from abuse, you will need to input the amount in this section. \nTo calculate the numbers, you may want to keep the proof of expenses at hand, and bring the proof later to the court. But if you are not sure of the exact number, you can input an estimate here."
+				info: "For this section, if you want the Respondent to pay support or repay you for expenses that resulted from abuse, you will need to input the amount in this section. <br />To calculate the numbers, you may want to keep the proof of expenses at hand, and bring the proof later to the court. But if you are not sure of the exact number, you can input an estimate here."
 			},
 			inputs:[{
 				component: {
@@ -4019,7 +4047,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4039,7 +4067,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was answered Yes
@@ -4060,7 +4088,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4080,7 +4108,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was yes
@@ -4098,7 +4126,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4124,7 +4152,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was medical expensense
@@ -4142,7 +4170,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat are medical expenses? \n\n\n Medical expenses are those expenses paid to physicians and hospitals that you may have incurred for yourself or other protected person in the Order of Protection for seeking medical help for injuries suffered from the Respondent."
+		extraInfo: <div><b>What are medical expenses?</b> <br /> Medical expenses are those expenses paid to physicians and hospitals that you may have incurred for yourself or other protected person in the Order of Protection for seeking medical help for injuries suffered from the Respondent.</div>
 		},
 		{
 			question:{ // If last question was lost earnings
@@ -4160,7 +4188,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat are lost earnings? \n\n\n\ Lost earnings are the wages you lost from not being able to work because of the injuries the Respondent inflicted on you or your children, or because you were forced to change housing to avoid additional confrontation."
+		extraInfo: <div><b>What are lost earnings?</b><br /> Lost earnings are the wages you lost from not being able to work because of the injuries the Respondent inflicted on you or your children, or because you were forced to change housing to avoid additional confrontation.</div>
 		},
 		{
 			question:{ // If last question was repair or replacement of property
@@ -4178,7 +4206,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat are the expenses for repairing or replacing property taken or damaged? \n\n\n Includes any payment you think you deserve because the Respondent took your property or money away from you, or because the Respondent damaged your property, and you have paid for repairs."
+		extraInfo: <div><b>What are the expenses for repairing or replacing property taken or damaged?</b> <br /> Includes any payment you think you deserve because the Respondent took your property or money away from you, or because the Respondent damaged your property, and you have paid for repairs.</div>
 		},
 		{
 			question:{ // If last question was moving or travel expenses
@@ -4196,7 +4224,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat expenses are included under moving and travel? \n\n\n\ Moving and other travel expenses are expenses that you incurred because you had to move yourself, your dependents or children from your home, as well as extra commuting costs you incur from your new living space to your place of work."
+		extraInfo: <div><b>What expenses are included under moving and travel?</b> <br />Moving and other travel expenses are expenses that you incurred because you had to move yourself, your dependents or children from your home, as well as extra commuting costs you incur from your new living space to your place of work.</div>
 		},
 		{
 			question:{ // If last question was housing and meals expenses
@@ -4214,7 +4242,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat are expenses for housing and meals other than for a domestic violence shelter? \n\n\n The amount you paid for housing and meals other than for a domestic violence shelter; including rent or hotels, for you or your dependents, as well as the money you spent for meals while you were away from your home. \n Do not include any payment made to domestic violence shelters."
+		extraInfo: <div><b>What are expenses for housing and meals other than for a domestic violence shelter?</b> <br />The amount you paid for housing and meals other than for a domestic violence shelter; including rent or hotels, for you or your dependents, as well as the money you spent for meals while you were away from your home. <br /> Do not include any payment made to domestic violence shelters.</div>
 		},
 		{
 			question:{ // If last question was search and recovery of children
@@ -4232,7 +4260,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338\n\n\n\n\n\nWhat are search and recovery of children expenses? \n\n\n Search and recovery of children expenses are the money you may have spent for a private investigator to locate your children, as well as any costs you had to expend to recover physical possession of your children."
+		extraInfo: <div><b>What are search and recovery of children expenses?</b> <br /> Search and recovery of children expenses are the money you may have spent for a private investigator to locate your children, as well as any costs you had to expend to recover physical possession of your children.</div>
 		},
 		{
 			question:{ // If last question was other expensenses
@@ -4250,7 +4278,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -4265,14 +4293,14 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		// Miscellaneous Remedies & Case Number  
 		{
 			question:{
 				label: "Miscellaneous Remedies & Case Number",
 				question: "Miscellaneous Remedies & Case Number",			
-				info: "You are almost finished! \nIn this section, you can ask for other protections you find necessary that have not been touched in previous sections. You also need to provide your Case Number if you have one."
+				info: "You are almost finished! <br />In this section, you can ask for other protections you find necessary that have not been touched in previous sections. You also need to provide your Case Number if you have one."
 			},
 			inputs:[{
 				component: {
@@ -4281,7 +4309,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4301,7 +4329,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{  // If last question was yes
@@ -4323,7 +4351,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was other 
@@ -4341,7 +4369,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4361,7 +4389,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was yes
@@ -4379,7 +4407,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was yes
@@ -4397,7 +4425,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ 
@@ -4417,7 +4445,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{ // If last question was yes
@@ -4435,7 +4463,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},
 		{
 			question:{
@@ -4450,7 +4478,7 @@ const data = {
 					compChildren: null
 				}
 			}],
-			extraInfo: "Abuse is never the victim's fault.\nIf you need help, try Illinois Domestic Violence Helpline: 877.863.6338"
+			extraInfo: ""
 		},	
 		]}
 
