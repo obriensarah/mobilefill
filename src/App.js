@@ -18,6 +18,46 @@ import data from './yirou';
 
 console.log(data);
 
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className='popup'>
+        <div className='popup_inner'>
+          <h1>Text</h1>
+          <p>Some explaination</p>
+        <Button onClick={this.props.closePopup}>close</Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Info extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPopup: false,
+    }
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Button  id='info' onClick={this.togglePopup.bind(this)} variant="secondary">
+          <InfoSquare color="ghostwhite" size={25} />
+        </Button>
+        {this.state.showPopup ? 
+          <Popup closePopup={this.togglePopup.bind(this)}/>
+          : null
+        }
+      </div>
+    )
+  }
+}
 
 class Header extends React.Component {
   render() {
@@ -25,7 +65,7 @@ class Header extends React.Component {
         <Navbar bg="dark">
           <Navbar.Text><Button variant="secondary"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
-              <Button variant="secondary"><InfoSquare color="ghostwhite" size={25} /></Button>
+              <Info />
             </Navbar.Collapse>
         </Navbar>
       )
