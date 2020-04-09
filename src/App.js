@@ -150,7 +150,7 @@ function CheckboxInput(props) {
     <Form className="mt-3" onChange={props.changeFunc.bind(this)}>
       {
         options.map((option, index) =>
-          <Form.Check key={index} type='checkbox' id={index} label={option}/>
+          <Form.Check key={index} type='checkbox' id={option} label={option} />
         )
       }
     </Form>
@@ -164,7 +164,7 @@ function MultipleChoiceInput(props) {
     <Form.Group className="mt-3">
       {
         options.map((option, index) =>
-          <Form.Check key={index} type='radio' id={index} label={option} name="multipleChoices" onChange={(props.changeFunc.bind(this))}/>
+          <Form.Check key={index} type='radio' id={option} label={option} name="multipleChoices" onChange={(props.changeFunc.bind(this))}/>
         )
       }
     </Form.Group>
@@ -212,7 +212,7 @@ class Template extends React.Component {
     super(props);
     this.state = {
       currQuestion: 0, //index of current question
-      currIput: null
+      currInput: []
     }
   }
 
@@ -221,7 +221,7 @@ class Template extends React.Component {
   }
 
   handleNextClick() {
-    console.log("in handle next, currInput is", this.state.currInput);
+
     fetch('http://localhost:8080/results', {
       "body": JSON.stringify({result:this.state.currInput}),
       "headers":{
@@ -253,24 +253,41 @@ class Template extends React.Component {
   }
 
   handleInputChange(event) {
-    if (event.target.type == "radio") {
-      console.log("this is a multiple choice question!")
+
+    const type = event.target.type;
+
+    if (type == "radio") {
+      const selected = event.target.id;
+      this.setState({currInput:selected})
     }
-    else if (event.target.type == "blah") {
-      console.log("this is a short text input question!")
-    }
-    else if (event.target.type == "checkbox") {
-      console.log("this is a checkbox question!")
+    else if (type == "checkbox") {
+      const selected = event.target.checked;
+      
+      if (this.state.currInput == null && selected) {
+        console.log("adding ", event.target.id, "to currInput.");
+        this.setState({currInput: [event.target.id]});
+      }
+      else if (selected) {
+        const s = this.state.currInput;
+        s.push(event.target.id);
+        this.setState({currInput:s});
+      }
+      else if (!selected) {
+        const s = this.state.currInput;
+        for (var i = 0; i < s.length; i++) {
+          if (s[i] == event.target.id) {
+            s.splice(i,1);
+          }
+        }
+        this.setState({currInput:s});
+      }
+
+      const s = this.state;
+      console.log(s);
     }
     else {
-      console.log("this is a long tet question!")
+      this.setState({currInput:event.target.value});
     }
-    // console.log("event is", event);
-    // console.log("event target is", event.target);
-    // console.log(event.target.value);
-    // console.log(event.target);
-    // this.setState({currInput:event.target.value});
-
   }
 
   render() {
