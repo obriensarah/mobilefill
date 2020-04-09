@@ -1,0 +1,40 @@
+{
+    "paths": [
+        {
+            "name": "/results",
+            "lambdaFunction": "mobilefilld93b48d0",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST"
+                ],
+                "unauth": [
+                    "/POST"
+                ]
+            }
+        }
+    ],
+    "resourceName": "mobilefillapi",
+    "apiName": "mobilefillapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "mobilefilld93b48d0"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-mobilefill-mobilefill-184041-authRole",
+        "unAuthRoleName": "amplify-mobilefill-mobilefill-184041-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "mobilefilld93b48d0",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

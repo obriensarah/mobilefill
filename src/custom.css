@@ -10,6 +10,19 @@
   background-color: rgba(0,0,0, 0.5);
   z-index: 1;
 }
+
+.dropdown-menu {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+
+.scrollable-dropdown {
+  height: auto;
+  overflow-y:auto;
+  overflow-x: hidden;
+}
+
 .popup_inner {
   position: absolute;
   left: 15%;
@@ -21,6 +34,10 @@
 }
 .navbar {
   min-height: 40px;
+}
+
+.mb-6 {
+  margin-bottom: 20px !important;
 }
 
 .navbar-brand {

@@ -1,33 +1,6 @@
 import React from 'react';
 const data = {
-	data: [
-	{
-			question:{
-				label: "Protection requested",
-				question: "Which types of abuse do you want to prevent?",				
-				info: "If you are unsure what the words after the boxes mean, you can click the top right corner for explanation."
-			},
-			inputs:[
-				{component: {
-					compName: "CheckboxInput",
-					compProps: {
-						options: [
-							"Harassment",
-							"Physical abuse",
-							"Stalking",
-							"Willful Deprivation",
-							"Intimidation of a Dependent ",
-							"Exploitation of a High-Risk Adult with Disabilities",
-							"Neglect of a High-Risk Adult with Disabilities",
-							"Interference with Personal Liberty",
-							"None of the above",
-						]
-					},
-					compChildren: {}
-				}},
-			],
-			extraInfo:<div><b>What is Abuse?</b><br />"Abuse" means physical abuse, harassment, intimidation of a dependent, interference with personal liberty, or willful deprivation but does not include reasonable direction of a minor child by a parent.<br /><br /><b>What is Harassment?</b><br />Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress:<br /> creating a disturbance at your place of work or school;<br />repeatedly telephoning your place of employment, house or school;<br />repeatedly following you in a public place or places;<br />repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking through your windows;<br />threatening physical force, confinement or restraint on one or more occasions; or<br />improperly concealing or threatening to conceal your child from you, removing your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br /><br /><b>What is Physical Abuse?</b><br />Physical abuse includes: <br />sexual abuse;<br />physical force;<br />confinement or restraint;<br />intentional, repeated and unnecessary sleep deprivation; or<br />any conduct which creates an immediate risk of physical harm.<br /><br /><b>What is Stalking?</b><br />Stalking means the Respondent knowingly and without lawful justification follows you or other persons protected in this Order of Protection in at least 2 separate occasions and places you under surveillance or threatens immediate or future harm to a person protected by this Order of Protection.<br /><br /><b>What is Willful Deprivation?</b><br />Denying a person access to medication, food, shelter or any other assistance they need resulting in their exposure to the risk of being harmed (physically, emotionally or mentally).<br /><br /><b>What is Intimidation of a Dependent?</b><br />Subjecting a person dependent to the Respondent because of age, health or disability to participate in or witness physical force, physical confinement, or restraint against any person.<br /><br /><b>What is Exploitation?</b><br />The illegal (including tortious) use of a high-risk adult with disabilities or of the assets or resources of a high-risk adult with disabilities. Exploitation includes the misappropriation of assets by:<br />undue influence;<br />breach of a fiduciary relationship;<br />fraud or deception;<br />extortion;<br />the illegal use of such assets or resources.</div>
-		},
+	data: [ 
 		{
 			question:{
 				label: "Disclaimer and Agreement",
@@ -77,21 +50,6 @@ const data = {
 			question:{
 				label: "Disclaimer and Agreement",
 				question: "Only Applicable in Cook County, IL",
-				info: "This product only helps if the Petitioner or the Respondent lives in Cook county, the abuse took place in the county, or the Petitioner is in Cook county temporarily to avoid abuse somewhere else. If that’s not the case, please use other resources instead."
-			},
-			inputs:[{
-				component: {
-					compName: "NoInput",
-					compProps: {},
-					compChildren: null
-				}
-			}],
-			extraInfo: ""
-		},
-		{
-			question:{
-				label: "Disclaimer and Agreement",
-				question: "Only Applicable in Cook County, IL",
 				info: "This site only helps if the Petitioner or the Respondent lives in Cook county, the abuse took place in the county, or the Petitioner is in Cook county temporarily to avoid abuse somewhere else. If that’s not the case, please use other resources instead."
 			},
 			inputs:[{
@@ -107,11 +65,11 @@ const data = {
 			question:{
 				label: "Disclaimer and Agreement",
 				question: "Only use this site if you agree with the following terms",
-				info: "This site does not give legal advice. Talk to a lawyer if you need legal help.<br />You must not use this site for any commercial purpose.<br />You are either low-income people or people without lawyers who access this site from a statewide legal aid website, pro bono website, or approved court website, nonprofit and charitable organization staff or authorized court staff who help other permitted users, or lawyers and their team who provide not-for-profit or reduced fee legal help to low-income people or nonprofit and charitable organizations."
+				info: <div>This site does not give legal advice. Talk to a lawyer if you need legal help.<br /><br />You must not use this site for any commercial purpose.<br /><br />You are either low-income people or people without lawyers who access this site from a statewide legal aid website, pro bono website, or approved court website, nonprofit and charitable organization staff or authorized court staff who help other permitted users, or lawyers and their team who provide not-for-profit or reduced fee legal help to low-income people or nonprofit and charitable organizations. <br /> <br/><b>By clicking "next", you indicate that you agree and will continue on to the form.</b></div>
 			},
 			inputs:[{
 				component: {
-					compName: "ButtonInput",
+					compName: "NoInput",
 					compProps: {},
 					compChildren: "I agree. Take me to the form."
 				}

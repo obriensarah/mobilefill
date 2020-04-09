@@ -30,7 +30,7 @@ function Info(props) {
         <Button  id='info' onClick={handleShow} variant="secondary">
           <InfoSquare color="ghostwhite" size={25} />
         </Button>
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal show={show} onHide={handleClose} animation={false} className="mb-5">
           <Modal.Header closeButton>
             <Modal.Title>Help</Modal.Title>
           </Modal.Header>
@@ -52,12 +52,15 @@ class Header extends React.Component {
   }
   render() {
     return(
+      <div className="sticky-top">
         <Navbar bg="dark">
           <Navbar.Text><Button variant="secondary"><List color="ghostwhite" size={25}/></Button></Navbar.Text>
             <Navbar.Collapse className="justify-content-end">
               <Info text={this.props.info}/>
             </Navbar.Collapse>
         </Navbar>
+        <ProgressBar now={this.props.progress}/>
+      </div>
       )
   }
 }
@@ -110,10 +113,11 @@ class SideBar extends React.Component {
 }
 
 function SingleTextInput(props) {
+  console.log("props are", props);
   return(
         <Form className="mt-3">
           <Form.Group controlId={props.controlId}>
-            <Form.Control type={props.controlId} placeholder={props.placeHolder} />
+            <Form.Control type={props.controlId} placeholder={props.placeHolder} onChange={props.changeFunc.bind(this)}/>
           </Form.Group>
         </Form>
     );
@@ -128,20 +132,22 @@ function ButtonInput(props) {
 function DropdownInput(props) {
   const options = props.options;
   return(
-    <DropdownButton id="dropdown-basic-button" title={props.buttonText} className="mt-3">
+    <div>
+    <DropdownButton className="scrollable-dropdown" id="dropdown-basic-button" title={props.buttonText} className="mt-3" onChange={props.changeFunc.bind(this)}>
       {
         options.map((option, index) =>
           <Dropdown.Item key={index} onClick={() => console.log("you clicked Action!")}>{option}</Dropdown.Item>
         )
       }
     </DropdownButton>
+    </div>
   );
 }
 
 function CheckboxInput(props) {
   const options = props.options;
   return(
-    <Form className="mt-3">
+    <Form className="mt-3" onChange={props.changeFunc.bind(this)}>
       {
         options.map((option, index) =>
           <Form.Check key={index} type='checkbox' id={index} label={option}/>
@@ -153,11 +159,12 @@ function CheckboxInput(props) {
 
 function MultipleChoiceInput(props) {
   const options = props.options;
+  console.log("options are", options);
   return(
     <Form.Group className="mt-3">
       {
         options.map((option, index) =>
-          <Form.Check key={index} type='radio' id={index} label={option} name="multiplechoices"/>
+          <Form.Check key={index} type='radio' id={index} label={option} name="multipleChoices" onChange={(props.changeFunc.bind(this))}/>
         )
       }
     </Form.Group>
@@ -166,7 +173,7 @@ function MultipleChoiceInput(props) {
 
 function LongTextInput(props) {
   return(
-    <Form.Control as="textarea" rows="13" placeholder={props.placeHolder}/>
+    <Form.Control as="textarea" rows="13" placeholder={props.placeHolder} onChange={props.changeFunc.bind(this)}/>
   );
 }
 
@@ -194,7 +201,7 @@ function Input(props) {
     <Card className="border-0 scroll mt-3 ml-5 mr-5 mb-5 pb-5">
     {inputs.map((input, index) => (
       <div key={index} className="pb-5">
-      {React.createElement(inputMap[input.component.compName], input.component.compProps, input.component.compChildren)}
+      {React.createElement(inputMap[input.component.compName], Object.assign(input.component.compProps, {changeFunc:props.changeFunc, input:{value:null}}), input.component.compChildren)}
       </div>))}
     </Card>
   );
@@ -205,6 +212,7 @@ class Template extends React.Component {
     super(props);
     this.state = {
       currQuestion: 0, //index of current question
+      currIput: null
     }
   }
 
@@ -213,6 +221,18 @@ class Template extends React.Component {
   }
 
   handleNextClick() {
+    console.log("in handle next, currInput is", this.state.currInput);
+    fetch('http://localhost:8080/results', {
+      "body": JSON.stringify({result:this.state.currInput}),
+      "headers":{
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method":"POST"
+    }).then((response) => response.json());
+
+    this.setState({currInput:null});
+
     if (this.state.currQuestion < data.data.length - 1) {
       this.setState({
         currQuestion: this.state.currQuestion + 1
@@ -232,6 +252,27 @@ class Template extends React.Component {
     this.setState({progress: this.currQuestion/data.data.length})
   }
 
+  handleInputChange(event) {
+    if (event.target.type == "radio") {
+      console.log("this is a multiple choice question!")
+    }
+    else if (event.target.type == "blah") {
+      console.log("this is a short text input question!")
+    }
+    else if (event.target.type == "checkbox") {
+      console.log("this is a checkbox question!")
+    }
+    else {
+      console.log("this is a long tet question!")
+    }
+    // console.log("event is", event);
+    // console.log("event target is", event.target);
+    // console.log(event.target.value);
+    // console.log(event.target);
+    // this.setState({currInput:event.target.value});
+
+  }
+
   render() {
 
     const metadata = this.getQuestionMetadata();
@@ -242,14 +283,13 @@ class Template extends React.Component {
     const inputs = metadata.inputs;
 
     const extraInfo = metadata.extraInfo;
-    console.log(extraInfo);
     
     return(
       <div>
-        <Header info={extraInfo}/>
-        <ProgressBar now={(this.state.currQuestion+1)/data.data.length * 100} />
+        <Header info={extraInfo} progress={(this.state.currQuestion+1)/data.data.length * 100} />
+        
         <Question question={question} label={label} info={info}/>
-        <Input inputs={inputs} />
+        <Input inputs={inputs} changeFunc={(event) => this.handleInputChange(event)}/>
         <Footer onNextClick={() => this.handleNextClick()} onBackClick={() => this.handleBackClick()}/>
       </div>
     );
