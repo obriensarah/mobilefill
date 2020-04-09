@@ -221,9 +221,10 @@ class Template extends React.Component {
   }
 
   handleNextClick() {
+    const q = this.getQuestionMetadata().question.question;
 
     fetch('http://localhost:8080/results', {
-      "body": JSON.stringify({result:this.state.currInput}),
+      "body": JSON.stringify({question: q, result:this.state.currInput}),
       "headers":{
         "Accept": "application/json",
         "Content-Type": "application/json"

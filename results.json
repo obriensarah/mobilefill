@@ -1,47 +1,24 @@
 {
   "results": [
     {
-      "result": null,
+      "question": "Why are you filing for this Order of Protection in Cook County?",
+      "result": [
+        "I live in the county."
+      ],
       "id": 1
     },
     {
-      "result": [
-        "I live in the county.",
-        "The person I am filing against lives in the county."
-      ],
+      "question": "Help file for an Order of Protection",
+      "result": null,
       "id": 2
     },
     {
-      "result": [],
+      "question": "Why are you filing for this Order of Protection in Cook County?",
+      "result": [
+        "The person I am filing against lives in the county.",
+        "I am in this county temporarily to avoid abuse somewhere else."
+      ],
       "id": 3
-    },
-    {
-      "result": null,
-      "id": 4
-    },
-    {
-      "result": [],
-      "id": 5
-    },
-    {
-      "result": [],
-      "id": 6
-    },
-    {
-      "result": [],
-      "id": 7
-    },
-    {
-      "result": [],
-      "id": 8
-    },
-    {
-      "result": [],
-      "id": 9
-    },
-    {
-      "result": [],
-      "id": 10
     }
   ]
 }
