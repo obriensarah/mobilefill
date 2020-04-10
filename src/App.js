@@ -113,19 +113,34 @@ class SideBar extends React.Component {
 }
 
 function SingleTextInput(props) {
-  console.log("props are", props);
+
   return(
+    <div key={props.placeHolder} >
         <Form className="mt-3">
           <Form.Group controlId={props.controlId}>
-            <Form.Control type={props.controlId} placeholder={props.placeHolder} onChange={props.changeFunc.bind(this)}/>
+            <Form.Control defaultValue="" type={props.controlId} placeholder={props.placeHolder} onChange={props.changeFunc.bind(this)} />
           </Form.Group>
         </Form>
+    </div>
     );
 }
 
+//this will serve just as a download button at the end
 function ButtonInput(props) {
   return(
-    <Button className="mt-3">{props.children}</Button>
+    <Button  
+      className="mt-3" 
+      onClick={() => 
+        fetch('http://localhost:8080/results')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+      }>
+        {props.children}
+    </Button>
   );
 }
 
@@ -194,7 +209,6 @@ const inputMap = {
 };
 
 function Input(props) {
-
   const inputs = props.inputs;
 
   return (
@@ -315,6 +329,14 @@ class Template extends React.Component {
 }
 
 function App() {
+
+  // fetch('http://localhost:8080/results')
+  // .then((response) => {
+  //   return response.json();
+  // })
+  // .then((data) => {
+  //   console.log(data);
+  // });
 
   return(
     <Template />

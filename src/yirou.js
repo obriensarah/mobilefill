@@ -1,28 +1,6 @@
 import React from 'react';
 const data = {
-	data: [ 
-	{
-			question:{
-				label: "Qualification questions",
-				question: "Why are you filing for this Order of Protection in Cook County?",
-				info: "Select all that is true. <br />If none of these apply, you cannot file in the Cook County.",
-			},
-			inputs:[
-				{component: {
-					compName: "CheckboxInput",
-					compProps: {
-						options: [
-							"I live in the county.",
-							"The person I am filing against lives in the county.",
-							"Abuse took place in the county.",
-							"I am in this county temporarily to avoid abuse somewhere else.",
-						]
-					},
-					compChildren: {}
-				}},
-			],
-			extraInfo: ""
-		},
+	data: [ 	
 		{
 			question:{
 				label: "Disclaimer and Agreement",
@@ -118,6 +96,23 @@ const data = {
 			],
 			extraInfo: <div><b>Who is a Family or Household Member?</b><br />Persons related by blood or by present or prior marriage, such as:<br />spouses or ex-spouses;<br /> parents, step-parents or grandparents;<br />children or stepchildren;<br />persons who have or allegedly have a child in common, even if you have never been married nor lived together;<br />people you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life;<br />persons who live with now or have lived with before;<br />persons who share or allegedly share a blood relationship through a child;<br />for a person with disabilities, their personal assistants or caregivers</div>
 		},
+		//remove this one
+		{
+			question:{//nested under "Someone else I am trying to help as an advocate or helper."
+				label: "Name",
+				question: "Download the PDF by clicking on the button.",
+				info: "To E-File your petition, ..."
+			},
+			inputs:[{
+				component: {
+					compName: "ButtonInput",
+					compProps: {
+					},
+					compChildren: "Download"
+				}
+			}],
+			extraInfo: ""
+		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
 				label: "Name",
@@ -164,7 +159,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah2",
 						placeHolder: "Chicago"
 					},
 					compChildren: {}
@@ -182,7 +177,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah3",
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 					compChildren: {}
@@ -200,7 +195,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah4",
 						placeHolder: "60607"
 					},
 					compChildren: {}
@@ -218,7 +213,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah5",
 						placeHolder: "(999)999-9999"
 					},
 					compChildren: {}
@@ -245,7 +240,7 @@ const data = {
 			question:{
 				label: "Qualification questions",
 				question: "Qualification questions",				
-				info: "This section asks for the most basic information of your Petition, including: <br />Where you are;<br />Who needs protection;<br />Against whom you want an Order of Protection;<br />What kind of Order of Protection do you need.<br />As always, if you need help, you can find help information at the top right corner."
+				info: <div>This section asks for the most basic information of your Petition, including: <br />Where you are;<br />Who needs protection;<br />Against whom you want an Order of Protection;<br />What kind of Order of Protection do you need.<br />As always, if you need help, you can find help information at the top right corner.</div>
 			},
 			inputs:[{
 				component: {
@@ -257,34 +252,10 @@ const data = {
 			extraInfo: ""
 		},
 		{
-			question:{//??: is question "List of Illinois counties (drop down)" necessary now that we're building for cook county?
-				label: "Qualification questions",
-				question: "In which County are you filing for an Order of Protection?",				
-				info: null			
-			},
-			inputs:[{
-				component: {
-					compName: "DropdownInput",
-					compProps: {
-						buttonText:"Cook",
-						options: [
-							"Adams",
-							"Alexsander",
-							"Bood",
-							"Boone",
-							"..."
-						]
-					},
-					compChildren: {}
-				}
-			}],
-			extraInfo: ""
-		},
-		{
 			question:{
 				label: "Qualification questions",
 				question: "Why are you filing for this Order of Protection in Cook County?",
-				info: "Select all that is true. <br />If none of these apply, you cannot file in the Cook County.",
+				info: <div>Select all that is true. <br />If none of these apply, you cannot file in the Cook County.</div>,
 			},
 			inputs:[
 				{component: {
@@ -364,7 +335,7 @@ const data = {
 			question:{//nested, appear if both questions' answers are "none of these apply"
 				label: "Qualification questions",
 				question: "You seem not qualified for Order of Protection",
-				info: "You need to have the relationship(s) we listed to get an Order of Protection.<br />If you need protection and have other relationship with the Respondent, look into Civil No Contact Order or Stalking No Contact Order."
+				info: <div>You need to have the relationship(s) we listed to get an Order of Protection.<br />If you need protection and have other relationship with the Respondent, look into Civil No Contact Order or Stalking No Contact Order.</div>
 			},
 			inputs:[{
 				component: {
@@ -379,13 +350,13 @@ const data = {
 			question:{
 				label: "Qualification Question",
 				question: "What is your name?",
-				info: "Enter the name of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. On the form, your name will appear as the Petitioner.<br />To court advocate or helper: enter the petitioner's name here, not yours."
+				info: <div>Enter the name of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. On the form, your name will appear as the Petitioner.<br />To court advocate or helper: enter the petitioner's name here, not yours.</div>
 			},
 			inputs:[{
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah6",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -397,13 +368,13 @@ const data = {
 			question:{
 				label: "Qualification Question",
 				question: "What is your birthdate?",
-				info: "Enter the birthdate of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. <br />To court advocate or helper: enter the petitioner's birthdate here, not yours."
+				info: <div>Enter the birthdate of you (the person who is filing this form now), even if you are filing for the Order of Protection for other family or household members. <br />To court advocate or helper: enter the petitioner's birthdate here, not yours.</div>
 			},
 			inputs:[{
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah7",
 						placeHolder: "mm/dd/yyyy"
 					},
 					compChildren: {}
@@ -422,7 +393,7 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse.<br />Select this if you want an Order of Protection right now. This may be extended to a Plenary Order of Protection later.",
+							"An Emergency Order of Protection (up to 21 days) because advance written notice would cause more abuse. (Select this if you want an Order of Protection right now. This may be extended to a Plenary Order of Protection later.)",
 							"A Plenary Order of Protection that requires the abuser to get notice and a copy of your Petition before the court hearing.<br />Select this only if you do not wish an Emergency Order of Protection."
 						]
 					},
@@ -449,7 +420,7 @@ const data = {
 			question:{
 				label: "communication",
 				question: "Address, phone and email of solicitor",
-				info: "This section asks how you want the court to communicate with you. Please get these information at hand:<br />Your address (this doesn’t need to be your real address)<br />Optionally, your email (this can be an email created just for filling for an Order of Protection that you regularly check)<br />As always, if you need help, you can find help information at the top right corner."
+				info: <div>This section asks how you want the court to communicate with you. Please get these information at hand:<br />Your address (this doesn’t need to be your real address)<br />Optionally, your email (this can be an email created just for filling for an Order of Protection that you regularly check)<br />As always, if you need help, you can find help information at the top right corner."</div>
 			},
 			inputs:[{
 				component: {
@@ -471,7 +442,7 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"I want to hide my real address and use another address where I can receive mail about this case<br />Select this if you do not want Respondent to know where you live, and have a different address where you can get mail.",
+							"I want to hide my real address and use another address where I can receive mail about this case. (Select this if you do not want Respondent to know where you live, and have a different address where you can get mail.)",
 							"I want to use my real address"
 						]//abnormalinput: notes for separate option
 					},
@@ -490,7 +461,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah8",
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 					compChildren: {}
@@ -508,7 +479,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah9",
 						placeHolder: "555 W. Harrison Apt. 1234"
 					},
 					compChildren: {}
@@ -526,7 +497,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah10",
 						placeHolder: "Chicago"
 					},
 					compChildren: {}
@@ -544,7 +515,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah11",
 						placeHolder: "Illinois"
 					},
 					compChildren: {}
@@ -562,7 +533,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah12",
 						placeHolder: "60607"
 					},
 					compChildren: {}
@@ -580,7 +551,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah13",
 						placeHolder: "(999)999-9999"
 					},
 					compChildren: {}
@@ -592,7 +563,7 @@ const data = {
 			question:{				
 				label: "communication",
 				question: "Would you like to receive documents in this case by email?",
-				info: "Your email address will appear on the court forms. <br />You can use a new email that is created just for Order of Protection purpose and not shared with others."
+				info: <div>Your email address will appear on the court forms. <br />You can use a new email that is created just for Order of Protection purpose and not shared with others."</div>
 			},
 			inputs:[
 				{component: {
@@ -612,13 +583,13 @@ const data = {
 			question:{//nested under "Yes"			
 				label: "communication",
 				question: "Enter your email address.",
-				info: "<br />You can use a new email that is created just for Order of Protection purpose and not shared with others. <br />Remember to check the email regularly in case you miss important information about your case. "
+				info: <div>You can use a new email that is created just for Order of Protection purpose and not shared with others. <br />Remember to check the email regularly in case you miss important information about your case.</div>
 			},
 			inputs:[{
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah14",
 						placeHolder: "yourname@email.com"
 					},
 					compChildren: {}
@@ -645,7 +616,7 @@ const data = {
 			question:{
 				label: "Protected People",
 				question: "Protected People",				
-				info: "This section asks for more details about the person that needs protection, such as their names. Please keep your answers consistent with what you have answered in the Qualification Questions section.<br />As always, if you need help, you can find help information at the top right corner."},
+				info: <div>This section asks for more details about the person that needs protection, such as their names. Please keep your answers consistent with what you have answered in the Qualification Questions section.<br />As always, if you need help, you can find help information at the top right corner."</div>},
 			inputs:[{
 				component: {
 					compName: "NoInput",
@@ -705,7 +676,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",//abnormalinput: take number of children, input each children's name + if he/she needs to be protected 
 					compProps: {
-						controlId: "blah",
+						controlId: "blah15",
 						placeHolder: "1"
 					},
 					compChildren: {}
@@ -723,7 +694,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah16",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -741,7 +712,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah17",
 						placeHolder: "mm/dd/yyyy"
 					},
 					compChildren: {}
@@ -759,7 +730,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah18",
 						placeHolder: "Illinois"
 					},
 					compChildren: {}
@@ -817,7 +788,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah19",
 						placeHolder: "Jane Doe"//abnormalinput: may have more than one child
 					},
 					compChildren: {}
@@ -855,7 +826,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah20",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -893,7 +864,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah21",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -931,7 +902,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah22",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -958,7 +929,7 @@ const data = {
 			question:{
 				label: "Person you want protection from",
 				question: "Person you want protection from",				
-				info: "This section asks for more details about the person against whom you want an Order of Protection. Again, please keep your answers consistent with what you have answered in the Qualification questions section.<br />You will need to provide the basic information such as his or her name, gender, race. <br />If you are not sure of the answer, you can write “do not know” under some questions, such as the person’s address, existing Order of Protection against him/her, or court cases against him/her that also involves you.<br />As always, if you need help, you can find help information at the top right corner."			},
+				info: <div>This section asks for more details about the person against whom you want an Order of Protection. Again, please keep your answers consistent with what you have answered in the Qualification questions section.<br />You will need to provide the basic information such as his or her name, gender, race. <br />If you are not sure of the answer, you can write “do not know” under some questions, such as the person’s address, existing Order of Protection against him/her, or court cases against him/her that also involves you.<br />As always, if you need help, you can find help information at the top right corner."</div>			},
 			inputs:[{
 				component: {
 					compName: "NoInput",
@@ -978,7 +949,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah23",
 						placeHolder: "Jane Doe"
 					},
 					compChildren: {}
@@ -996,7 +967,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah24",
 						placeHolder: "mm/dd/yyyy"
 					},
 					compChildren: {}
@@ -1061,7 +1032,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah25",
 						placeHolder: "Illinois"
 					},
 			}}],
@@ -1077,7 +1048,7 @@ const data = {
 				component: {
 					compName: "SingleTextInput",
 					compProps: {
-						controlId: "blah",
+						controlId: "blah26",
 						placeHolder: "Chicago"
 					},
 			}}],
@@ -1087,7 +1058,7 @@ const data = {
 			question:{
 				label: "Person you want protection from",
 				question: "To your best knowledge, where does the Respondent live now?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, write "do not know.</div>
 			},
 			inputs:[{
 				component: {
@@ -1175,7 +1146,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Person you want protection from",
 				question: "To your best knowledge, where is the Respondent's employer?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, please leave it blank."
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, please leave it blank.</div>
 			},
 			inputs:[{
 				component: {
@@ -1207,7 +1178,7 @@ const data = {
 			question:{//nested under "Yes."
 				label: "Person you want protection from",
 				question: "Enter the work hours of the Respondent for the employer.",
-				info: "For example, 9:00 am to 5:00 pm.<br />If unknown, please leave it blank."
+				info: <div>For example, 9:00 am to 5:00 pm.<br />If unknown, please leave it blank.</div>
 			},
 			inputs:[{
 				component: {
@@ -1413,7 +1384,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Person you want protection from",
 				question: "What is the type of this case?",
-				info: "For example, divorce, custody, child support, paternity, parenting time, guardianship, adoption, and abuse and neglect cases.<br />If you do not know the information asked for, then write \"do not know.\""
+				info: <div>For example, divorce, custody, child support, paternity, parenting time, guardianship, adoption, and abuse and neglect cases.<br />If you do not know the information asked for, then write "do not know."</div>
 			},
 			inputs:[{
 				component: {
@@ -1497,7 +1468,7 @@ const data = {
 			question:{
 				label: "Reasons for the protective order",
 				question: "Reasons for the protective order",			
-				info: "You need to describe the incidents of abuse in this section. This is because to decide whether to grant an Order of Protection (including Emergency Order of Protection), the judge needs to know what happened exactly. <br />You can include up to 9 incidents of any past abuses (and any criminal conviction that resulted) from the Respondent. "
+				info: <div>You need to describe the incidents of abuse in this section. This is because to decide whether to grant an Order of Protection (including Emergency Order of Protection), the judge needs to know what happened exactly. <br />You can include up to 9 incidents of any past abuses (and any criminal conviction that resulted) from the Respondent.</div>
 			},
 			inputs:[{
 				component: {
@@ -1512,7 +1483,7 @@ const data = {
 			question:{
 				label: "Reasons for the protective order",
 				question: "Suggestion for Writing About Abuse Incidents",				
-				info: "You may find these suggestions useful:<br /> Were you emotionally abused? <br /> Where you hit with a close hand? <br /> Did the abuser use any instruments to hurt you? <br /> If you have children, were they hurt by the abuser? <br /> Was the abuser the influence of any substance? <br />You can always refer to this Suggestion List at the top right corner."
+				info: <div>You may find these suggestions useful:<br /> Were you emotionally abused? <br /> Where you hit with a close hand? <br /> Did the abuser use any instruments to hurt you? <br /> If you have children, were they hurt by the abuser? <br /> Was the abuser the influence of any substance? <br />You can always refer to this Suggestion List at the top right corner.</div>
 			},
 			inputs:[{
 				component: {
@@ -1527,7 +1498,7 @@ const data = {
 			question:{
 				label: "Reasons for the protective order",
 				question: "Tip: Draft Somewhere Else First, Copy-Paste Here Later",				
-				info: "Writing about abuse experiences can be hard. You may need details that are not at hand, or you simply need more time to figure things out.<br />If it is more comfortable to you, you can take a look at this section, leave it blank for now, draft your experiences somewhere secure, and copy-paste your finished descriptions into this section later."
+				info: <div>Writing about abuse experiences can be hard. You may need details that are not at hand, or you simply need more time to figure things out.<br />If it is more comfortable to you, you can take a look at this section, leave it blank for now, draft your experiences somewhere secure, and copy-paste your finished descriptions into this section later.</div>
 			},
 			inputs:[{
 				component: {
@@ -1542,7 +1513,7 @@ const data = {
 			question:{
 				label: "Reasons for the protective order",
 				question: "Tip: Start with what happened most recently",				
-				info: "Please input first what happened most recently, then enter in reverse chronological order. <br />You may find it more comfortable to draft your experiences somewhere secure, and copy-paste your finished descriptions here later."
+				info: <div>Please input first what happened most recently, then enter in reverse chronological order. <br />You may find it more comfortable to draft your experiences somewhere secure, and copy-paste your finished descriptions here later.</div>
 			},
 			inputs:[{
 				component: {
@@ -1593,7 +1564,7 @@ const data = {
 			question:{
 				label: "Reasons for the protective order",
 				question: "What did Respondent do to you, and or the other persons for whom you want an Order of Protection?",				
-				info: "Be specific, and describe the effect that this incident has had on you or the other persons.<br />You can always refer to this Suggestion List at the top right corner."
+				info: <div>Be specific, and describe the effect that this incident has had on you or the other persons.<br />You can always refer to this Suggestion List at the top right corner.</div>
 			},
 			inputs:[{
 				component: {
@@ -1644,7 +1615,7 @@ const data = {
 			question:{
 				label: "Protection requested",
 				question: "Protection requested",				
-				info: "This section asks for the types of abuse that you want to prevent, and the details of the protection sought. Think about the types of protections you need, such as: <br />No communication;<br />Staying physically away;<br />Arrangements if the Respondent attend the same school with the person who needs protection;<br />Other arrangements about properties, pets and cell phone accounts<br />If other types of protection are needed but not included in this section, you can fill them later at the “Miscellaneous Remedies & Case Number” section of this Form.<br />As always, if you need help, you can find help information at the top right corner."
+				info: <div>This section asks for the types of abuse that you want to prevent, and the details of the protection sought. Think about the types of protections you need, such as: <br />No communication;<br />Staying physically away;<br />Arrangements if the Respondent attend the same school with the person who needs protection;<br />Other arrangements about properties, pets and cell phone accounts<br />If other types of protection are needed but not included in this section, you can fill them later at the “Miscellaneous Remedies & Case Number” section of this Form.<br />As always, if you need help, you can find help information at the top right corner.</div>
 			},
 			inputs:[{
 				component: {
@@ -1778,7 +1749,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of the residence you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, write "do not know."</div>
 			},
 			inputs:[{
 				component: {
@@ -1878,7 +1849,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of the place of employment you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, write "do not know."</div>
 			},
 			inputs:[{
 				component: {
@@ -2019,7 +1990,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of this school or day-care center you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, write "do not know."</div>
 			},
 			inputs:[{
 				component: {
@@ -2233,7 +2204,7 @@ const data = {
 			question:{//nested under "yes"
 				label: "Protection requested",
 				question: "What is the address of this location you want the Respondent to keep away from?",
-				info: "Including apartment, suite, or floor #.<br />If unknown, write \"do not know.\""
+				info: <div>Including apartment, suite, or floor #.<br />If unknown, write "do not know."</div>
 			},
 			inputs:[{
 				component: {
@@ -2362,7 +2333,7 @@ const data = {
 			question:{//nested under "I want exclusive possession of my residence, and the Respondent should not be allowed to enter or stay there at all times." 
 				label: "Protection requested",
 				question: "What is the address of the residence you want exclusive possession?",
-				info: "If you did not list your actual address in previous questions, write “PROTECTED ADDRESS” instead.<br />Including apartment, suite, or floor #."
+				info: <div>If you did not list your actual address in previous questions, write “PROTECTED ADDRESS” instead.<br />Including apartment, suite, or floor #.</div>
 			},
 			inputs:[{
 				component: {//abnormalinput: can we call/show here the residence address that has been entered previously?
@@ -2586,7 +2557,7 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"At the residence <br />(Select this if you agree to let the abuser enter the residence once to get their things)",//abnormalinput: need residence address that has been entered previously to pop up
+							<div>At the residence <br />(Select this if you agree to let the abuser enter the residence once to get their things)</div>,//abnormalinput: need residence address that has been entered previously to pop up
 							"At another location"
 						]
 					},
@@ -2716,7 +2687,7 @@ const data = {
 					compName: "MultipleChoiceInput",
 					compProps: {
 						options: [
-							"Law enforcement officials<br />It may be safer if the transfer is in the presence of a law enforcement officer.",
+							<div>Law enforcement officials<br />It may be safer if the transfer is in the presence of a law enforcement officer.</div>,
 							"A third person"
 						]
 					},
@@ -3057,7 +3028,7 @@ const data = {
 			question:{
 				label: "Remedies regarding children",
 				question: "Remedies regarding children",			
-				info: "This section appears because you answered the person who needs protection has children younger than 18 with the Respondent. If this is not the case, come back and change your answer.<br />You need to provide information about the children.<br />Some of the protections available are return of the children, restriction against hiding or removing the children from Illinois, and specified parenting time."
+				info: <div>This section appears because you answered the person who needs protection has children younger than 18 with the Respondent. If this is not the case, come back and change your answer.<br />You need to provide information about the children.<br />Some of the protections available are return of the children, restriction against hiding or removing the children from Illinois, and specified parenting time.</div>
 			},
 			inputs:[{
 				component: {
@@ -3424,7 +3395,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-	 	extraInfo: "<br />What's Harassment? <br />\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br /> - creating a disturbance at your place of work or school; <br /> - repeatedly telephoning your place of employment, house or school; <br /> - repeatedly following you in a public place or places; <br /> - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br /> - threatening physical force, confinement or restraint on one or more occasions; or <br /> - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br />Who is a Family or Household Member? <br />\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life <br /> Persons who live with you now or have lived with you before <br /> Persons who share or allegedly share a blood relationship through a child <br /> For a person with disabilities, their personal assistants or caregivers."	
+	 	extraInfo: <div><b>What's Harassment?</b> <br />Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br />creating a disturbance at your place of work or school; <br />repeatedly telephoning your place of employment, house or school; <br />repeatedly following you in a public place or places; <br />repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br />threatening physical force, confinement or restraint on one or more occasions; or <br />improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br /><br /><b>Who is a Family or Household Member?</b> <br />Persons related by blood or marriage, such as:<br /> parents, step-parents or grandparents;<br /> children or stepchildren; <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together; <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life; <br /> Persons who live with you now or have lived with you before; <br /> Persons who share or allegedly share a blood relationship through a child; <br /> For a person with disabilities, their personal assistants or caregivers.</div>	
 		},
 		{
 			question:{  // If restrict parenting time option was selected
@@ -3446,7 +3417,7 @@ const data = {
 					compChildren: {}
 				}},
 			],
-		extraInfo: "<br />What's Harassment? <br />\ Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br /> - creating a disturbance at your place of work or school; <br /> - repeatedly telephoning your place of employment, house or school; <br /> - repeatedly following you in a public place or places; <br /> - repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br /> - threatening physical force, confinement or restraint on one or more occasions; or <br /> - improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br />Who is a Family or Household Member? <br />\ Persons related by blood or  marriage, such as: parents, step-parents or grandparents; children or stepchildren <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life <br /> Persons who live with you now or have lived with you before <br /> Persons who share or allegedly share a blood relationship through a child <br /> For a person with disabilities, their personal assistants or caregivers."	
+		extraInfo: <div><b>What's Harassment?</b> <br />Harassment is an unnecessary conduct which causes you emotional distress.  The following types of conducts are presumed to cause emotional distress: <br />creating a disturbance at your place of work or school; <br />repeatedly telephoning your place of employment, house or school; <br />repeatedly following you in a public place or places; <br />repeatedly keeping you under surveillance by staying outside your home, school, place of work, vehicle or another place you are in or by looking  through your windows; <br />threatening physical force, confinement or restraint on one or more occasions; or <br />improperly concealing or threatening to conceal your child from you, removing  your child outside State limits or from your physical care, or making a threat after actually or attempting to improperly remove your child.<br /><br /><b>Who is a Family or Household Member?</b> <br />Persons related by blood or marriage, such as:<br /> parents, step-parents or grandparents;<br /> children or stepchildren; <br /> Persons who have or allegedly have a child in common, even if you have never been married nor lived together; <br /> People you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life; <br /> Persons who live with you now or have lived with you before; <br /> Persons who share or allegedly share a blood relationship through a child; <br /> For a person with disabilities, their personal assistants or caregivers.</div>	
 		},
 		{
 			question:{  // If allow parenting time option was selected
@@ -4018,7 +3989,7 @@ const data = {
 			question:{
 				label: "Support and Expenses",
 				question: "Support and Expenses",			
-				info: "For this section, if you want the Respondent to pay support or repay you for expenses that resulted from abuse, you will need to input the amount in this section. <br />To calculate the numbers, you may want to keep the proof of expenses at hand, and bring the proof later to the court. But if you are not sure of the exact number, you can input an estimate here."
+				info: <div>For this section, if you want the Respondent to pay support or repay you for expenses that resulted from abuse, you will need to input the amount in this section. <br />To calculate the numbers, you may want to keep the proof of expenses at hand, and bring the proof later to the court. But if you are not sure of the exact number, you can input an estimate here.</div>
 			},
 			inputs:[{
 				component: {
@@ -4280,7 +4251,7 @@ const data = {
 			question:{
 				label: "Miscellaneous Remedies & Case Number",
 				question: "Miscellaneous Remedies & Case Number",			
-				info: "You are almost finished! <br />In this section, you can ask for other protections you find necessary that have not been touched in previous sections. You also need to provide your Case Number if you have one."
+				info: <div>You are almost finished! <br />In this section, you can ask for other protections you find necessary that have not been touched in previous sections. You also need to provide your Case Number if you have one.</div>
 			},
 			inputs:[{
 				component: {
