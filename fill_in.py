@@ -38,9 +38,9 @@ def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
 def fill_starter_checklist(data):
     today = date.today()
     data_dict = {
-        # 'Counties1': data['What is the name of Court advocate / helper?'],
+        # 'Counties1': "Cook",
         'Petitioner': data['Who are you requesting an Order of Protection for?'],
-        'Petitioner': 'Not real Name',
+        'Petitioner': 'Example Form',
         'People to be protected by this order1': True,
         'People to be protected by this order2': True,
         'Petitioner': 'Fake Name Tommy',
