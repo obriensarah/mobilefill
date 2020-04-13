@@ -96,23 +96,6 @@ const data = {
 			],
 			extraInfo: <div><b>Who is a Family or Household Member?</b><br />Persons related by blood or by present or prior marriage, such as:<br />spouses or ex-spouses;<br /> parents, step-parents or grandparents;<br />children or stepchildren;<br />persons who have or allegedly have a child in common, even if you have never been married nor lived together;<br />people you date or engage with (or you used to do so), which does not include your casual acquaintanceship in business or daily life;<br />persons who live with now or have lived with before;<br />persons who share or allegedly share a blood relationship through a child;<br />for a person with disabilities, their personal assistants or caregivers</div>
 		},
-		//remove this one
-		{
-			question:{//nested under "Someone else I am trying to help as an advocate or helper."
-				label: "Name",
-				question: "Download the PDF by clicking on the button.",
-				info: "To E-File your petition, ..."
-			},
-			inputs:[{
-				component: {
-					compName: "ButtonInput",
-					compProps: {
-					},
-					compChildren: "Download"
-				}
-			}],
-			extraInfo: ""
-		},
 		{
 			question:{//nested under "Someone else I am trying to help as an advocate or helper."
 				label: "Name",
@@ -4430,7 +4413,23 @@ const data = {
 				}
 			}],
 			extraInfo: ""
-		},	
+		},
+		{
+			question:{//nested under "Someone else I am trying to help as an advocate or helper."
+				label: "Name",
+				question: "Download the PDF by clicking on the button.",
+				info: "To E-File your petition, ..."
+			},
+			inputs:[{
+				component: {
+					compName: "ButtonInput",
+					compProps: {
+					},
+					compChildren: "Download"
+				}
+			}],
+			extraInfo: ""
+		}
 		]}
 
 export default data;
